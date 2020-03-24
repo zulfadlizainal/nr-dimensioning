@@ -1,6 +1,6 @@
 # 5G-NR-Planning-and-Dimensioning
 
-Series of  for 5G NR radio planning and dimensioning. Always WIP. Feel free to create a branch and improves these simulations.
+Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create a branch and improves these simulations.
 <br />
 <br />
 
