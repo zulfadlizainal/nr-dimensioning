@@ -19,7 +19,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 - [ ] SI Occupancy
 
-### Part 4: DL Common Dimensioning ([Link](https://))
+### Part 4: DL Common Channel ([Link](https://))
 
 - [ ] PDCCH RE Utilization
 - [ ] Demand for Data Scheduling
@@ -28,14 +28,14 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 - [ ] PDCCH Demand in CCE and RE
 - [ ] PDCCH Space Utilization
 
-### Part 5: PDSCH Dimensioning ([Link](https://))
+### Part 5: PDSCH ([Link](https://))
 
 - [ ] Total DL RE Space
 - [ ] Cell DL Throughput
 - [ ] Cell User Throughput
 - [ ] DL Overhead
 
-### Part 6: Paging Dimensioning ([Link](https://))
+### Part 6: Paging ([Link](https://))
 
 - [ ] Paging Volume
 - [ ] Paging Occasions
@@ -44,7 +44,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 - [ ] CCE Consumption for Paging
 - [ ] Paging RE Consumption
 
-### Part 7: UL Common Dimensioning ([Link](https://))
+### Part 7: UL Common Channel ([Link](https://))
 
 - [ ] PRACH Demand for Call Setup
 - [ ] PRACH Demand for Handover
@@ -55,7 +55,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 - [ ] CSI Demand
 - [ ] PUCCH Format Demand
 
-### Part 7: PUSCH Dimensioning ([Link](https://))
+### Part 8: PUSCH ([Link](https://))
 
 - [ ] Total UL RE Space
 - [ ] PUSCH RE Space
@@ -63,6 +63,6 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 - [ ] User UL Throughput
 - [ ] UL Overhead
 
-### Part 8: Power ([Link](https://))
+### Part 9: Power ([Link](https://))
 
 - [ ] SSB Power
