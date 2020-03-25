@@ -11,7 +11,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 ### Part 2: Synchronization ([Link](https://))
 
-- [ ] PSS, SSS Occupancy
+- [ ] PSS, SSS Occupancy 
 - [ ] PBCH Occupancy
 - [ ] SSB Occupancy
 
@@ -48,7 +48,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 - [ ] PRACH Demand for Call Setup
 - [ ] PRACH Demand for Handover
-- [ ] PRACH Collision Probability
+- [ ] PRACH Collision Probability :arrows_counterclockwise:
 - [ ] PRACH Capacity Utilization
 - [ ] SR Demand
 - [ ] ACK/NACK Demand
