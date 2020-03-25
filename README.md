@@ -4,7 +4,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 <br />
 <br />
 
-### Part 1: Operating Band, Frame Structure ([Link](https://))
+### Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
 
 - [X] RB Count
 - [X] Minimum Guard Band
