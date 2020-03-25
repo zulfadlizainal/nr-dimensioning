@@ -6,10 +6,10 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 ### Part 1: Operating Band, Frame Structure ([Link](https://))
 
-- [ ] RB Count
-- [ ] Minimum Guard Band
+- [X] RB Count
+- [X] Minimum Guard Band
 
-### Part 2: Syncronization ([Link](https://))
+### Part 2: Synchronization ([Link](https://))
 
 - [ ] PSS, SSS Occupancy
 - [ ] PBCH Occupancy
