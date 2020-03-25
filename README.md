@@ -3,7 +3,9 @@
 Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create a branch and improves these simulations.
 <br />
 <br />
-
+<img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/X%20img%20X/main_page.png" alt="Banner" title="Banner" width=100% height=100% />
+<br />
+<br />
 ### Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
 
 - [X] RB Count :heavy_check_mark: :new:
