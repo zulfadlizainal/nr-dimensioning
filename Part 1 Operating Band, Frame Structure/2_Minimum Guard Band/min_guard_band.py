@@ -1,3 +1,7 @@
+# Author: Zulfadli Zainal
+# Github: https://github.com/zulfadlizainal
+# Linkedin: https://linkedin.com/in/zulfadlizainal
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
