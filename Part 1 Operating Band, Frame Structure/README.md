@@ -1,5 +1,5 @@
 # Part 1 - Operating Band, Frame Structure
-Simulations for NR Operating Bands
+Simulations on the topics of NR Operating Bands and Frame Structures
 
 ### List of Simulations
 
