@@ -1,11 +1,11 @@
 # Part 1 - Operating Band, Frame Structure
 Simulations for NR Operating Bands
 
-### List of projects
+### List of Simulations
 
-RB Count ([Link](https://github.com/zulfadlizainal/5G-NR-Coverage-Prediction#1-coverage-map---free-space-path-loss-model-link))
+RB Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure#1-rb-count-link))
 <br />
-Minimum Guard Band ([Link](https://github.com/zulfadlizainal/5G-NR-Coverage-Prediction#2-coverage-map---measurement-based-pl-model-n77-link))
+Minimum Guard Band ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure#2-minimum-guard-band-link))
 <br />
 
 ## 1. RB Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/1_RB%20Count))
