@@ -9,6 +9,10 @@ import matplotlib.pyplot as plt
 df_rb_fr1 = pd.read_excel('3GPP_TS_38_101_RB_FR1.xlsx', index_col=0)
 df_rb_fr2 = pd.read_excel('3GPP_TS_38_101_RB_FR2.xlsx', index_col=0)
 
+print('\nFR1\n')
+print(df_rb_fr1)
+print('\n')
+
 # Plot FR1
 df_rb_fr1.plot.bar()
 plt.title('RB Count for every BW & SCS - FR1')
@@ -16,6 +20,12 @@ plt.ylabel('RB Count')
 plt.xlabel('Sub Carrier Spacing (SCS) (kHz)')
 plt.ylim(0, 300)
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), title='NR Bandwidth')
+
+plt.show()
+
+print('\nFR2\n')
+print(df_rb_fr2)
+print('\n')
 
 # Plot FR2
 df_rb_fr2.plot.bar()
