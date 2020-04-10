@@ -10,6 +10,7 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 - [X] RB Count :heavy_check_mark: :new:
 - [X] Minimum Guard Band :heavy_check_mark: :new:
+- [X] RE Count
 
 ### Part 2: Synchronization ([Link](https://))
 
