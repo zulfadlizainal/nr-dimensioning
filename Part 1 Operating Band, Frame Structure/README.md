@@ -7,6 +7,8 @@ RB Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioni
 <br />
 Minimum Guard Band ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure#2-minimum-guard-band-link))
 <br />
+RE Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure#3-re-count-link))
+<br />
 
 ## 1. RB Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/1_RB%20Count))
 
@@ -28,7 +30,7 @@ Number of Minimum Guard Band required for 5G NR based on SCS.
 
 ## 3. RE Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count))
 
-Number of EB Count possible for 5G NR for every 10ms Frame.
+Number of RE Count possible for 5G NR for every 10ms Frame.
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/img/recount.png" alt="RE Count" title="RE Count" width=100% height=100% />

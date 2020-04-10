@@ -1,6 +1,6 @@
 # RE Count Based on SCS and Bandwidth
 
-Calculating the Resource Element (RE) count forevery FR, SCS, and Bandwidth. Simulation is segregating the count based on normal CP and extended CP.
+Calculating the Resource Element (RE) count for every FR, SCS, and Bandwidth. Simulation is segregating the count based on normal CP and extended CP.
 
 ### Explanation
 
@@ -13,7 +13,7 @@ Based on 3GPP TS 38.101, number of RB for ever SCS and Bandwidth are defined. Ba
 
 ### Calculation
 
-The number slot for every 1ms subframe based on SCS
+The number of slot for every 1ms subframe based on SCS
 
     SCS 15kHz = 1 Slot/Subframe
     SCS 30kHz = 2 Slot/Subframe
