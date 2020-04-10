@@ -25,3 +25,12 @@ Number of Minimum Guard Band required for 5G NR based on SCS.
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/img/minguardband.png" alt="Min Guard Band" title="Min Guard Band" width=100% height=100% />
 <br />
 <br />
+
+## 3. RE Count ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count))
+
+Number of EB Count possible for 5G NR for every 10ms Frame.
+<br />
+<br />
+<img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/img/recount.png" alt="RE Count" title="RE Count" width=100% height=100% />
+<br />
+<br />
