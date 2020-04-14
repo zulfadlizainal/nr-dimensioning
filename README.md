@@ -6,11 +6,11 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 - [X] RB Count :heavy_check_mark:
 - [X] Minimum Guard Band :heavy_check_mark:
-- [X] RE Count :heavy_check_mark: :new:
+- [X] RE Count :heavy_check_mark:
 
-### Part 2: Synchronization ([Link](https://))
+### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
-- [ ] PSS, SSS Occupancy 
+- [X] PSS, SSS Occupancy :heavy_check_mark: :new:
 - [ ] PBCH Occupancy
 - [ ] SSB Occupancy
 
