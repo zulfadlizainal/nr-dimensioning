@@ -11,108 +11,122 @@ import matplotlib.pyplot as plt
 df_fr1 = pd.read_excel('FR1_Re_Count.xlsx', index_col=0)
 df_fr2 = pd.read_excel('FR2_Re_Count.xlsx', index_col=0)
 
-# Only 15, 30, 120, 240 kHz SCS supported for SSB. So filter 60 kHz SCS
+# Only 15, 30, 120, 240 kHz SCS supported for SSB. So filter out 60 kHz SCS
 
 df_fr1 = df_fr1.loc[(df_fr1['SCS (kHz)'] == 15) | (df_fr1['SCS (kHz)'] == 30)]
 df_fr2 = df_fr2.loc[(df_fr2['SCS (kHz)'] == 120) |
                     (df_fr2['SCS (kHz)'] == 240)]
 
-############################ FR1 PSS + SSS Occupancy ############################
+# Change RE/Frame (10ms) to RE/Sec (1Sec)
 
-# For FR1, SSB Count in SSB Burst can be up until 4 and 8 (LMax = 4 for < 3GHz, 8 for ~3-6GHz)
+df_fr1['Normal CP RE/Sec'] = df_fr1['Normal CP RE/Frame']*100
+df_fr2['Normal CP RE/Sec'] = df_fr2['Normal CP RE/Frame']*100
+
+
+############################### Simulation Info ################################
+
+# FR1
+
+# For FR1, SSB Count in SSB Burst can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
 # For SSB Periodicity, it can be set to 5, 10, 15, 20, 40, 80, 160 ms based on spec
-# Simulation will only consider SSB periodicity 5-20ms
-# PSS Size: 127 Suncarriers, 1 Symbol
-# SSS Size: 127 Suncarriers, 1 Symbol
+# PSS Size: 127 Subcarriers, 1 Symbol
+# SSS Size: 127 Subcarriers, 1 Symbol
+# PSS + SSS Occupancy/Sec = ((PSS Size+SSS Size)*L*SSB Burst Count in 1 Sec)/Total RE per Sec
 
-# PSS + SSS Occupancy for LMax = 4 (Normal CP)
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 5ms)'] = ((
-    ((127*1)+(127*1))*4*2)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 10ms)'] = ((
-    ((127*1)+(127*1))*4*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 15ms)'] = ((
-    ((127*1)+(127*1))*4*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 20ms)'] = ((
-    ((127*1)+(127*1))*4*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-# PSS + SSS Occupancy for LMax = 8 (Normal CP)
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 5ms)'] = ((
-    ((127*1)+(127*1))*8*2)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 10ms)'] = ((
-    ((127*1)+(127*1))*8*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 15ms)'] = ((
-    ((127*1)+(127*1))*8*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr1['PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 20ms)'] = ((
-    ((127*1)+(127*1))*8*1)/df_fr1['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
+pss_size = 127*1
+sss_size = 127*1
+sec = 1000
 
 
-############################ FR2 PSS + SSS Occupancy ############################
+p = [5, 10, 15, 20, 40, 80, 160]  # SSB Burst Periodicity
+i = 0                             # Counter
+index = 0
 
-# For FR2, SSB Count in SSB Burst can be up until 64 (LMax = 64 for > 6GHz)
+for index in range(len(p)):
+
+    l = 1                         # L = No of SSB in 1 SSB Burst (Max = 8)
+
+    for index in range(len(p)):
+
+        for index in range(len(p)):
+
+            if i < len(p):
+
+                if l <= 8:
+
+                    df_fr1[f'L = {l}, p = {p[i]} ms'] = (
+                        ((pss_size+sss_size)*l*(np.floor(sec/p[i])))/df_fr1['Normal CP RE/Sec'])*100
+
+                    l = l*2
+
+                else:
+                    None
+
+            else:
+                None
+
+    i = i+1
+
+
+# FR2
+
+# For FR2, SSB Count in SSB Burst can be up until 64 (LMax = 64)
 # For SSB Periodicity, it can be set to 5, 10, 15, 20, 40, 80, 160 ms based on spec
-# Simulation will only consider SSB periodicity 5-20ms
-# PSS Size: 127 Suncarriers, 1 Symbol
-# SSS Size: 127 Suncarriers, 1 Symbol
+# PSS Size: 127 Subcarriers, 1 Symbol
+# SSS Size: 127 Subcarriers, 1 Symbol
+# PSS + SSS Occupancy/Sec = ((PSS Size+SSS Size)*L*SSB Burst Count in 1 Sec)/Total RE per Sec
 
-# PSS + SSS Occupancy for LMax = 64 (Normal CP)
-
-df_fr2['PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 5ms)'] = ((
-    ((127*1)+(127*1))*64*2)/df_fr2['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr2['PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 10ms)'] = ((
-    ((127*1)+(127*1))*64*1)/df_fr2['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr2['PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 15ms)'] = ((
-    ((127*1)+(127*1))*64*1)/df_fr2['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
-
-df_fr2['PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 20ms)'] = ((
-    ((127*1)+(127*1))*64*1)/df_fr2['Normal CP RE/Frame'])*100  # ((PSS Size+SSS Size)*L*SSB Burst Count in a Frame)/Total RE per Frame
+pss_size = 127*1
+sss_size = 127*1
+sec = 1000
 
 
-# Plot FR1 with LMax = 4
-df_fr1.plot(x='ID', y=['PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 5ms)', 'PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 10ms)',
-                       'PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 15ms)', 'PSS+SSS Occupancy/Frame % (L = 4, SSB Burst Periodicity = 20ms)'], kind="bar", width=1)
+p = [5, 10, 15, 20, 40, 80, 160]  # SSB Burst Periodicity
+i = 0                             # Counter
+index = 0
+
+for index in range(len(p)):
+
+    l = 1                         # L = No of SSB in 1 SSB Burst (Max = 64)
+
+    for index in range(len(p)):
+
+        for index in range(len(p)):
+
+            if i < len(p):
+
+                if l <= 64:
+
+                    df_fr2[f'L = {l}, p = {p[i]} ms'] = (
+                        ((pss_size+sss_size)*l*(np.floor(sec/p[i])))/df_fr2['Normal CP RE/Sec'])*100
+
+                    l = l*2
+
+                else:
+                    None
+
+            else:
+                None
+
+    i = i+1
+
+
+df_fr1.to_excel('FR1.xlsx')
+df_fr2.to_excel('FR2.xlsx')
+
+# Plot
+
+df_fr1.plot(x='ID', y=['L = 1, p = 5 ms', 'L = 2, p = 5 ms', 'L = 4, p = 5 ms',	'L = 8, p = 5 ms',
+                       'L = 1, p = 10 ms', 'L = 2, p = 10 ms', 'L = 4, p = 10 ms', 'L = 8, p = 10 ms',
+                       'L = 1, p = 15 ms', 'L = 2, p = 15 ms', 'L = 4, p = 15 ms', 'L = 8, p = 15 ms',
+                       'L = 1, p = 20 ms', 'L = 2, p = 20 ms', 'L = 4, p = 20 ms', 'L = 8, p = 20 ms',
+                       'L = 1, p = 40 ms', 'L = 2, p = 40 ms', 'L = 4, p = 40 ms', 'L = 8, p = 40 ms',
+                       'L = 1, p = 80 ms', 'L = 2, p = 80 ms', 'L = 4, p = 80 ms', 'L = 8, p = 80 ms',
+                       'L = 1, p = 160 ms',	'L = 2, p = 160 ms', 'L = 4, p = 160 ms', 'L = 8, p = 160 ms'
+                       ], kind="line")
 
 plt.xlabel('FR_SCS(kHz)_BW(MHz)')
-plt.ylabel('PSS + SSS Occupancy (%)')
-plt.legend(['SSB Burst Periodicity = 5ms', 'SSB Burst Periodicity = 10ms',
-            'SSB Burst Periodicity = 15ms', 'SSB Burst Periodicity = 20ms'])
-plt.title('FR1 PSS + SSS Occupancy per 10ms Frame (%)\nL = 4')
-
-plt.show()
-
-print('\n')
-
-# Plot FR1 with LMax = 8
-df_fr1.plot(x='ID', y=['PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 5ms)', 'PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 10ms)',
-                       'PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 15ms)', 'PSS+SSS Occupancy/Frame % (L = 8, SSB Burst Periodicity = 20ms)'], kind="bar", width=1)
-
-plt.xlabel('FR_SCS(kHz)_BW(MHz)')
-plt.ylabel('PSS + SSS Occupancy (%)')
-plt.legend(['SSB Burst Periodicity = 5ms', 'SSB Burst Periodicity = 10ms',
-            'SSB Burst Periodicity = 15ms', 'SSB Burst Periodicity = 20ms'])
-plt.title('FR1 PSS + SSS Occupancy per 10ms Frame (%)\nL = 8')
-
-plt.show()
-
-print('\n')
-
-# Plot FR2 with LMax = 64
-df_fr2.plot(x='ID', y=['PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 5ms)', 'PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 10ms)',
-                       'PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 15ms)', 'PSS+SSS Occupancy/Frame % (L = 64, SSB Burst Periodicity = 20ms)'], kind="bar", width=1)
-
-plt.xlabel('FR_SCS(kHz)_BW(MHz)')
-plt.ylabel('PSS + SSS Occupancy (%)')
-plt.legend(['SSB Burst Periodicity = 5ms', 'SSB Burst Periodicity = 10ms',
-            'SSB Burst Periodicity = 15ms', 'SSB Burst Periodicity = 20ms'])
-plt.title('FR1 PSS + SSS Occupancy per 10ms Frame (%)\nL = 64')
+plt.ylabel('PSS+SSS Occupancy %')
+plt.title('PSS+SSS Occupancy %')
 
 plt.show()
