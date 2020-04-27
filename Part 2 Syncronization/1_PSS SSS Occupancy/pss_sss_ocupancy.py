@@ -67,6 +67,16 @@ for index in range(len(p)):
 
     i = i+1
 
+df_fr1_scs15 = df_fr1[df_fr1['SCS (kHz)'] == 15]
+df_fr1_scs15 = df_fr1_scs15.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
+                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+df_fr1_scs15.set_index('Bandwidth (MHz)', inplace=True)
+df_fr1_scs15_col = list(df_fr1_scs15.columns.values)
+
+df_fr1_scs30 = df_fr1[df_fr1['SCS (kHz)'] == 30]
+df_fr1_scs30 = df_fr1_scs30.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
+                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+
 
 # FR2
 
@@ -110,23 +120,24 @@ for index in range(len(p)):
 
     i = i+1
 
+df_fr2_scs120 = df_fr2[df_fr2['SCS (kHz)'] == 120]
+df_fr2_scs120 = df_fr2_scs120.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
+                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
 
-df_fr1.to_excel('FR1.xlsx')
-df_fr2.to_excel('FR2.xlsx')
+df_fr2_scs240 = df_fr2[df_fr2['SCS (kHz)'] == 240]
+df_fr2_scs240 = df_fr2_scs240.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
+                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+
 
 # Plot
 
-df_fr1.plot(x='ID', y=['L = 1, p = 5 ms', 'L = 2, p = 5 ms', 'L = 4, p = 5 ms',	'L = 8, p = 5 ms',
-                       'L = 1, p = 10 ms', 'L = 2, p = 10 ms', 'L = 4, p = 10 ms', 'L = 8, p = 10 ms',
-                       'L = 1, p = 15 ms', 'L = 2, p = 15 ms', 'L = 4, p = 15 ms', 'L = 8, p = 15 ms',
-                       'L = 1, p = 20 ms', 'L = 2, p = 20 ms', 'L = 4, p = 20 ms', 'L = 8, p = 20 ms',
-                       'L = 1, p = 40 ms', 'L = 2, p = 40 ms', 'L = 4, p = 40 ms', 'L = 8, p = 40 ms',
-                       'L = 1, p = 80 ms', 'L = 2, p = 80 ms', 'L = 4, p = 80 ms', 'L = 8, p = 80 ms',
-                       'L = 1, p = 160 ms',	'L = 2, p = 160 ms', 'L = 4, p = 160 ms', 'L = 8, p = 160 ms'
-                       ], kind="line")
+fig, ax1 = plt.subplots(1,1)
+ax1.imshow(df_fr1_scs15, cmap='jet', interpolation='nearest')
+ax1.set_xticklabels(df_fr1_scs15_col, rotation = 90, ha="right")
 
-plt.xlabel('FR_SCS(kHz)_BW(MHz)')
-plt.ylabel('PSS+SSS Occupancy %')
-plt.title('PSS+SSS Occupancy %')
+plt.xlabel('L, SSB Periodicity (ms)')
+plt.ylabel('Bandwidth (MHz)')
+plt.title('PSS + OSS Occupancy (%)')
+#plt.colorbar()
 
 plt.show()
