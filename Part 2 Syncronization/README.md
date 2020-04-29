@@ -1,5 +1,5 @@
 # Part 2 - Synchronization
-Simulations on the topics of PSS, SSS, PBCH, and SSB oocupancy in 5G resource grid.
+Simulations on the topics of PSS, SSS, PBCH, and SSB occupancy in 5G resource grid.
 
 ### List of Simulations
 
