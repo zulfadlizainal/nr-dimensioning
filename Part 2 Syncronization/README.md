@@ -6,7 +6,7 @@ Simulations on the topics of PSS, SSS, PBCH, and SSB occupancy in 5G resource gr
 PSS, SSS Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization#1-pss-sss-occupancy-link))
 <br />
 
-## 1. PSS, SSS Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/1_RB%20Count))
+## 1. PSS, SSS Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization/1_PSS%20SSS%20Occupancy))
 
 The resource utilized by PSS and SSS depending on L (Count of SSB in 1 SSB Burst Set) and p (SSB Periodicity).
 <br />
