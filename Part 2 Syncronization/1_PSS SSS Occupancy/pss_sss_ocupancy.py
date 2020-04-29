@@ -71,12 +71,25 @@ df_fr1_scs15 = df_fr1[df_fr1['SCS (kHz)'] == 15]
 df_fr1_scs15 = df_fr1_scs15.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
                                   'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
 df_fr1_scs15.set_index('Bandwidth (MHz)', inplace=True)
-df_fr1_scs15_col = list(df_fr1_scs15.columns.values)
+df_fr1_scs15_5ms = df_fr1_scs15.iloc[:,:4]
+df_fr1_scs15_10ms = df_fr1_scs15.iloc[:,4:8]
+df_fr1_scs15_15ms = df_fr1_scs15.iloc[:,8:12]
+df_fr1_scs15_20ms = df_fr1_scs15.iloc[:,12:16]
+df_fr1_scs15_40ms = df_fr1_scs15.iloc[:,16:20]
+df_fr1_scs15_80ms = df_fr1_scs15.iloc[:,20:24]
+df_fr1_scs15_160ms = df_fr1_scs15.iloc[:,24:28]
 
 df_fr1_scs30 = df_fr1[df_fr1['SCS (kHz)'] == 30]
 df_fr1_scs30 = df_fr1_scs30.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
                                   'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
-
+df_fr1_scs30.set_index('Bandwidth (MHz)', inplace=True)
+df_fr1_scs30_5ms = df_fr1_scs30.iloc[:,:4]
+df_fr1_scs30_10ms = df_fr1_scs30.iloc[:,4:8]
+df_fr1_scs30_15ms = df_fr1_scs30.iloc[:,8:12]
+df_fr1_scs30_20ms = df_fr1_scs30.iloc[:,12:16]
+df_fr1_scs30_40ms = df_fr1_scs30.iloc[:,16:20]
+df_fr1_scs30_80ms = df_fr1_scs30.iloc[:,20:24]
+df_fr1_scs30_160ms = df_fr1_scs30.iloc[:,24:28]
 
 # FR2
 
@@ -122,22 +135,67 @@ for index in range(len(p)):
 
 df_fr2_scs120 = df_fr2[df_fr2['SCS (kHz)'] == 120]
 df_fr2_scs120 = df_fr2_scs120.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
-                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+                                    'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+df_fr2_scs120.set_index('Bandwidth (MHz)', inplace=True)
+df_fr2_scs120_5ms = df_fr2_scs120.iloc[:,:7]
+df_fr2_scs120_10ms = df_fr2_scs120.iloc[:,7:14]
+df_fr2_scs120_15ms = df_fr2_scs120.iloc[:,14:21]
+df_fr2_scs120_20ms = df_fr2_scs120.iloc[:,21:28]
+df_fr2_scs120_40ms = df_fr2_scs120.iloc[:,28:35]
+df_fr2_scs120_80ms = df_fr2_scs120.iloc[:,35:42]
+df_fr2_scs120_160ms = df_fr2_scs120.iloc[:,42:49]
 
 df_fr2_scs240 = df_fr2[df_fr2['SCS (kHz)'] == 240]
 df_fr2_scs240 = df_fr2_scs240.drop(['FR', 'SCS (kHz)', 'RB', 'ID', 'Slots/Subframe', 'Slots/Frame',
-                                  'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
-
+                                    'Normal CP Symbol/Frame', 'Normal CP RE/Frame/RB', 'Normal CP RE/Frame', 'Normal CP RE/Sec'], axis=1)
+df_fr2_scs240.set_index('Bandwidth (MHz)', inplace=True)
 
 # Plot
 
-fig, ax1 = plt.subplots(1,1)
-ax1.imshow(df_fr1_scs15, cmap='jet', interpolation='nearest')
-ax1.set_xticklabels(df_fr1_scs15_col, rotation = 90, ha="right")
+fig1, axes = plt.subplots(nrows=3, ncols=3)
 
-plt.xlabel('L, SSB Periodicity (ms)')
-plt.ylabel('Bandwidth (MHz)')
-plt.title('PSS + OSS Occupancy (%)')
-#plt.colorbar()
+df_fr1_scs15_5ms.plot(kind='line', style='.--', ax=axes[0,0], ylim=[0,15], xlim=[0,100])
+df_fr1_scs15_10ms.plot(kind='line', style='.--', ax=axes[0,1], ylim=[0,15], xlim=[0,100])
+df_fr1_scs15_15ms.plot(kind='line', style='.--', ax=axes[0,2], ylim=[0,15], xlim=[0,100])
+df_fr1_scs15_20ms.plot(kind='line', style='.--', ax=axes[1,0], ylim=[0,5], xlim=[0,100])
+df_fr1_scs15_40ms.plot(kind='line', style='.--', ax=axes[1,1], ylim=[0,5], xlim=[0,100])
+df_fr1_scs15_80ms.plot(kind='line', style='.--', ax=axes[1,2], ylim=[0,5], xlim=[0,100])
+df_fr1_scs15_160ms.plot(kind='line', style='.--', ax=axes[2,0], ylim=[0,2], xlim=[0,100])
+
+fig1.suptitle('PSS+SSS Occupancy (%) for FR = 1, SCS = 15 kHz\nL = SSB Count in SSB Burst Set, p = SSB Periodicity')
+fig1.text(0.5, 0.04, 'Bandwidth (MHz)', ha='center')
+fig1.text(0.04, 0.5, 'Occupancy (%)', va='center', rotation='vertical')
+
+plt.show()
+
+fig2, axes = plt.subplots(nrows=3, ncols=3)
+
+df_fr1_scs30_5ms.plot(kind='line', style='.--', ax=axes[0,0], ylim=[0,15], xlim=[0,100])
+df_fr1_scs30_10ms.plot(kind='line', style='.--', ax=axes[0,1], ylim=[0,15], xlim=[0,100])
+df_fr1_scs30_15ms.plot(kind='line', style='.--', ax=axes[0,2], ylim=[0,15], xlim=[0,100])
+df_fr1_scs30_20ms.plot(kind='line', style='.--', ax=axes[1,0], ylim=[0,5], xlim=[0,100])
+df_fr1_scs30_40ms.plot(kind='line', style='.--', ax=axes[1,1], ylim=[0,5], xlim=[0,100])
+df_fr1_scs30_80ms.plot(kind='line', style='.--', ax=axes[1,2], ylim=[0,5], xlim=[0,100])
+df_fr1_scs30_160ms.plot(kind='line', style='.--', ax=axes[2,0], ylim=[0,2], xlim=[0,100])
+
+fig2.suptitle('PSS+SSS Occupancy (%) for FR = 1, SCS = 30 kHz\nL = SSB Count in SSB Burst Set, p = SSB Periodicity')
+fig2.text(0.5, 0.04, 'Bandwidth (MHz)', ha='center')
+fig2.text(0.04, 0.5, 'Occupancy (%)', va='center', rotation='vertical')
+
+plt.show()
+
+fig3, axes = plt.subplots(nrows=3, ncols=3)
+
+df_fr2_scs120_5ms.plot(kind='line', style='.--', ax=axes[0,0], ylim=[0,15], xlim=[0,400])
+df_fr2_scs120_10ms.plot(kind='line', style='.--', ax=axes[0,1], ylim=[0,15], xlim=[0,400])
+df_fr2_scs120_15ms.plot(kind='line', style='.--', ax=axes[0,2], ylim=[0,15], xlim=[0,400])
+df_fr2_scs120_20ms.plot(kind='line', style='.--', ax=axes[1,0], ylim=[0,5], xlim=[0,400])
+df_fr2_scs120_40ms.plot(kind='line', style='.--', ax=axes[1,1], ylim=[0,5], xlim=[0,400])
+df_fr2_scs120_80ms.plot(kind='line', style='.--', ax=axes[1,2], ylim=[0,5], xlim=[0,400])
+df_fr2_scs120_160ms.plot(kind='line', style='.--', ax=axes[2,0], ylim=[0,2], xlim=[0,400])
+
+fig3.suptitle('PSS+SSS Occupancy (%) for FR = 2, SCS = 120 kHz\nL = SSB Count in SSB Burst Set, p = SSB Periodicity')
+fig3.text(0.5, 0.04, 'Bandwidth (MHz)', ha='center')
+fig3.text(0.04, 0.5, 'Occupancy (%)', va='center', rotation='vertical')
 
 plt.show()
