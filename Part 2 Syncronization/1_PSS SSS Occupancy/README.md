@@ -36,11 +36,6 @@ The number of slot for every 1ms subframe based on SCS
     SCS 60kHz = 4 Slot/Subframe
     SCS 120kHz = 8 Slot/Subframe
 
-Definition of Slot Based on CP Type
-
-    1 Slot = 14 OFDM Symbols (Normal CP)
-    1 Slot = 12 OFDM Symbols (Extended CP)
-
 Definition of Frame
 
     1 Frame = 10 Subframe
@@ -50,6 +45,27 @@ Definition of Frame
 Definition of RB
 
     1 RB = 12 Subcarriers
+
+PSS and SSS Size
+
+    PSS Size = 127 Subcarriers x 1 Symbol
+    SSS Size = 127 Subcarriers x 1 Symbol
+
+For FR1, SSB Count in SSB Burst can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
+
+    L = 1, 2, 4, 8
+
+For FR2, SSB Count in SSB Burst can be up until 64 (LMax = 64)
+
+    L = 1, 2, 4, 8, 16, 32, 64
+
+For SSB Periodicity, it can be set based on spec
+
+    p = 5, 10, 20, 40, 80, 160 ms
+
+PSS + SSS Occupancy (%) - Use 1 Seconds as benchmark
+
+    PSS + SSS Occupancy (%) = ((PSS Size+SSS Size)*L*SSB Burst Count in 1 Sec)/Total RE per Sec
 
 ### Results
 
