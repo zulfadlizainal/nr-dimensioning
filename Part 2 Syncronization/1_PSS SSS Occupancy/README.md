@@ -13,7 +13,7 @@ Next, the structure and size of PSS and SSS inside the SSB need to be considered
 <br />
 <br />
 
-The concept of SSB Burst Set (Multiple SSB in 1 SSB Burst) and SSB Burst Set periodicity:
+The concept of SSB count/Burst set (Multiple SSB in 1 SSB Burst Set) and SSB Burst Set periodicity:
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%202%20Syncronization/img/ssb_burst_periodicity.png" alt="SSB Periodicity" title="SSB Periodicity" width=100% height=100% />
@@ -21,6 +21,10 @@ The concept of SSB Burst Set (Multiple SSB in 1 SSB Burst) and SSB Burst Set per
 <br />
 
 Parameter L & p that being considered in this simulation:
+
+L = Total number of SSB count inside 1 SSB Burst Set (Important during beam sweeping, more L means more beam)
+p = SSB Burst Set periodicity (How often SSB Burst is being repeated in time domain)
+
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%202%20Syncronization/img/ssb_parameter.png" alt="L&p" title="L&p" width=100% height=100% />
@@ -51,11 +55,11 @@ PSS and SSS Size
     PSS Size = 127 Subcarriers x 1 Symbol
     SSS Size = 127 Subcarriers x 1 Symbol
 
-For FR1, SSB Count in SSB Burst can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
+For FR1, SSB Count in SSB Burst Set can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
 
     L = 1, 2, 4, 8
 
-For FR2, SSB Count in SSB Burst can be up until 64 (LMax = 64)
+For FR2, SSB Count in SSB Burst Set can be up until 64 (LMax = 64)
 
     L = 1, 2, 4, 8, 16, 32, 64
 
