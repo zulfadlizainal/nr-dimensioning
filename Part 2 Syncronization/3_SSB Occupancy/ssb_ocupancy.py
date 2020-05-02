@@ -33,7 +33,7 @@ df_fr2['Normal CP RE/Sec'] = df_fr2['Normal CP RE/Frame']*100
 # SSS Size: 127 Subcarriers, 1 Symbol
 # PBCH Size: (240 Subcarriers x 1 Symbol x 2 Block) + (48 Subcarriers x 1 Symbol x 2 Block)
 # No Tx Size: (9 Subcarriers x 1 Symbol) + (8 Subcarriers x 1 Symbol) + (57 Subcarriers x 1 Symbol) + (56 Subcarriers x 1 Symbol)
-# SSB Size: PSS Size + SSS Size + PBCH Size
+# SSB Size: PSS Size + SSS Size + PBCH Size + No Tx Size
 # SSB Occupancy/Sec = ((SSB Size)*L*SSB Burst Count in 1 Sec)/Total RE per Sec
 
 pss_size = 127*1
@@ -104,7 +104,7 @@ df_fr1_scs30_160ms = df_fr1_scs30.iloc[:,20:24]
 # SSS Size: 127 Subcarriers, 1 Symbol
 # PBCH Size: (240 Subcarriers x 1 Symbol x 2 Block) + (48 Subcarriers x 1 Symbol x 2 Block)
 # No Tx Size: (9 Subcarriers x 1 Symbol) + (8 Subcarriers x 1 Symbol) + (57 Subcarriers x 1 Symbol) + (56 Subcarriers x 1 Symbol)
-# SSB Size: PSS Size + SSS Size + PBCH Size
+# SSB Size: PSS Size + SSS Size + PBCH Size + No Tx Size
 # SSB Occupancy/Sec = ((SSB Size)*L*SSB Burst Count in 1 Sec)/Total RE per Sec
 
 pss_size = 127*1
