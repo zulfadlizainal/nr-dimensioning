@@ -72,7 +72,7 @@ PBCH Occupancy (%) - Use 1 Seconds as benchmark
 
 ### Results
 
-The resource utilized by PSS and SSS depending on L (Count of SSB in 1 SSB Burst Set) and p (SSB Periodicity).
+The resource utilized by PBCH depending on L (Count of SSB in 1 SSB Burst Set) and p (SSB Periodicity).
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%202%20Syncronization/img/pbch_scs15_result.png" alt="SCS15" title="SCS15" width=100% height=100% />
