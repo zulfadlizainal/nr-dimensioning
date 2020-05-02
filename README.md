@@ -10,9 +10,9 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 ### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
-- [X] PSS, SSS Occupancy :heavy_check_mark: :new:
-- [ ] PBCH Occupancy
-- [ ] SSB Occupancy
+- [X] PSS, SSS Occupancy :heavy_check_mark:
+- [X] PBCH Occupancy :heavy_check_mark: :new:
+- [X] SSB Occupancy :heavy_check_mark: :new:
 
 ### Part 3: System Information ([Link](https://))
 
