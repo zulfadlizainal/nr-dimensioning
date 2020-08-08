@@ -3,7 +3,6 @@
 # Linkedin: https://linkedin.com/in/zulfadlizainal
 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -98,7 +97,7 @@ sns.heatmap(df_si_occupancy, cmap='RdYlGn_r', linewidths=0.5, annot=True)
 
 plt.xlabel("OSI Periodicity (ms)")
 plt.ylabel("No of Beams")
-plt.title(f'\n OSI Occupancy % (SIB2 NR)\n Assume SIB2 Size = {sib_size} RE \n FR_SCS_BW = {select_config} \n')
+plt.title(f'\n OSI Occupancy / Frame % (SIB2 NR)\n Assume SIB2 Size = {sib_size} RE \n FR_SCS_BW = {select_config} \n')
 plt.legend()
 plt.grid()
 

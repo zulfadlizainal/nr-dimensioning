@@ -3,7 +3,6 @@
 # Linkedin: https://linkedin.com/in/zulfadlizainal
 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 
 # Import RE Count Table
@@ -92,7 +91,7 @@ print(df_si_occupancy)
 
 # Plot Result
 
-df_si_occupancy.plot(x='No of Beams', y='RMSI Periodicity (SIB1) = 20 ms')
+df_si_occupancy.plot.bar(x='No of Beams', y='RMSI Periodicity (SIB1) = 20 ms')
 
 plt.xlabel("No of Beams")
 plt.ylabel("Occupancy (%)")
