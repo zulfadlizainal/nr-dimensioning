@@ -11,12 +11,12 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 ### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
 - [X] PSS, SSS Occupancy :heavy_check_mark:
-- [X] PBCH Occupancy :heavy_check_mark: :new:
-- [X] SSB Occupancy :heavy_check_mark: :new:
+- [X] PBCH Occupancy :heavy_check_mark:
+- [X] SSB Occupancy :heavy_check_mark:
 
-### Part 3: System Information ([Link](https://))
+### Part 3: System Information ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information))
 
-- [ ] SI Occupancy
+- [X] SI Occupancy :heavy_check_mark: :new:
 
 ### Part 4: DL Common Channel ([Link](https://))
 
@@ -61,7 +61,3 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 - [ ] Cell UL Throughput
 - [ ] User UL Throughput
 - [ ] UL Overhead
-
-### Part 9: Power ([Link](https://))
-
-- [ ] SSB Power
