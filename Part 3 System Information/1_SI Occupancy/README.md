@@ -29,13 +29,13 @@ SI Occupancy / Frame (%) Formulae References
 
 ### Results
 
-Eg: The resource utilized by RMSI (SIB1 NR) for 20ms RMSI periodicity in different beam settings for SCS 60kHz and BW 50MHz:
+Eg: The resource utilized by RMSI (SIB1 NR) for 20ms RMSI periodicity in different beam settings for SCS 120kHz and BW 50MHz:
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%203%20System%20Information/img/si_rmsi_result.png" alt="RMSI (SIB1 NR)" title="RMSI (SIB1 NR)" width=100% height=100% />
 <br />
 <br />
-Eg: The resource utilized by OSI (SIB2 NR) for different SI periodicity in different beam settings for SCS 60kHz and BW 50MHz:
+Eg: The resource utilized by OSI (SIB2 NR) for different SI periodicity in different beam settings for SCS 120kHz and BW 50MHz:
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%203%20System%20Information/img/si_osi_result.png" alt="OSI (SIB2 NR)" title="OSI (SIB2 NR)" width=100% height=100% />
