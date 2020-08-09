@@ -3,7 +3,7 @@ Simulations on the topics of SI occupancy in 5G resource grid.
 
 ### List of Simulations
 
-SI (RMSI and OSI) Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information/1_SI%20Occupancy))
+SI (RMSI and OSI) Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information#1-si-occupancy-link))
 <br />
 
 ## 1. SI Occupancy ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information/1_SI%20Occupancy))
