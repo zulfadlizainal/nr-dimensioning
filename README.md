@@ -4,19 +4,19 @@ Series of  for 5G NR radio planning simulations. Always WIP. Feel free to create
 
 ### Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
 
-- [X] RB Count :heavy_check_mark:
-- [X] Minimum Guard Band :heavy_check_mark:
-- [X] RE Count :heavy_check_mark:
+- [X] RB Count
+- [X] Minimum Guard Band
+- [X] RE Count
 
 ### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
-- [X] PSS, SSS Occupancy :heavy_check_mark:
-- [X] PBCH Occupancy :heavy_check_mark:
-- [X] SSB Occupancy :heavy_check_mark:
+- [X] PSS, SSS Occupancy
+- [X] PBCH Occupancy
+- [X] SSB Occupancy
 
 ### Part 3: System Information ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information))
 
-- [X] SI Occupancy :heavy_check_mark: :new:
+- [X] SI Occupancy
 
 ### Part 4: DL Common Channel ([Link](https://))
 
