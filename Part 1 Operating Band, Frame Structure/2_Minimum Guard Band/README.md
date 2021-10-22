@@ -26,7 +26,8 @@ Taking example for 5MHz channel BW with 25 NRB & 15kHz Subcarrier Spacing
 
 ### Results
 
-Plotting for the mentioned table:
+Plotting for the mentioned table. Lower bandwidth need smaller kHz for guarband however the occupancy % is much higher.
+
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/img/minguardband.png" alt="Minimum Guard Band" title="Minimum Guard Band" width=100% height=100% />
