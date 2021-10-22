@@ -17,6 +17,7 @@ df_gb_fr1['BW']=df_gb_fr1['BW'].astype('int64')
 df_gb_fr1.set_index('BW', inplace=True)
 
 df_gb_fr1_ratio = df_gb_fr1/1000
+df_gb_fr1_ratio = df_gb_fr1_ratio*2
 df_gb_fr1_ratio = df_gb_fr1_ratio.divide(df_gb_fr1_ratio.index, axis=0 )
 df_gb_fr1_ratio = df_gb_fr1_ratio*100
 
@@ -28,6 +29,7 @@ df_gb_fr2['BW']=df_gb_fr2['BW'].astype('int64')
 df_gb_fr2.set_index('BW', inplace=True)
 
 df_gb_fr2_ratio = df_gb_fr2/1000
+df_gb_fr2_ratio = df_gb_fr2_ratio*2
 df_gb_fr2_ratio = df_gb_fr2_ratio.divide(df_gb_fr2_ratio.index, axis=0 )
 df_gb_fr2_ratio = df_gb_fr2_ratio*100
 
@@ -48,7 +50,7 @@ df_gb_fr1_ratio.plot(style=['v-','s-','8-'], markersize=10)
 plt.title('Guardband Occupation (%) - FR1', fontsize=15)
 plt.ylabel('Guardband %')
 plt.xlabel('NR Bandwidth (MHz)')
-plt.ylim(0, 20)
+plt.ylim(0, 30)
 plt.xlim(0, 100)
 plt.grid()
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), title='(SCS) (kHz)')
@@ -72,7 +74,7 @@ df_gb_fr2_ratio.plot(style=['v-','s-'], markersize=10)
 plt.title('Guardband Occupation (%) - FR2', fontsize=15)
 plt.ylabel('Guardband %')
 plt.xlabel('NR Bandwidth (MHz)')
-plt.ylim(0, 20)
+plt.ylim(0, 30)
 plt.xlim(0, 450)
 plt.grid()
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), title='(SCS) (kHz)')
