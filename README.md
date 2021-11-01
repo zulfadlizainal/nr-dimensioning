@@ -18,7 +18,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 
 - [X] SI Occupancy
 
-### Part 4: DL Common Channel ([Link](https://))
+### Part 4: DL Common Channel ([Link](https://https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel))
 
 - [X] Demand for Data Scheduling
 - [X] Demand for VoNR Scheduling
