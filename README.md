@@ -20,12 +20,10 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 
 ### Part 4: DL Common Channel ([Link](https://))
 
-- [ ] PDCCH RE Utilization
-- [ ] Demand for Data Scheduling
-- [ ] Demand for VoNR Scheduling
-- [ ] PDCCH Mean Aggregation Level
-- [ ] PDCCH Demand in CCE and RE
-- [ ] PDCCH Space Utilization
+- [X] Demand for Data Scheduling
+- [X] Demand for VoNR Scheduling
+- [X] PDCCH CCE and PDCCH RE Demand
+- [X] PDCCH Utilization
 
 ### Part 5: PDSCH ([Link](https://))
 
@@ -47,7 +45,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 
 - [ ] PRACH Demand for Call Setup
 - [ ] PRACH Demand for Handover
-- [ ] PRACH Collision Probability :arrows_counterclockwise:
+- [ ] PRACH Collision Probability
 - [ ] PRACH Capacity Utilization
 - [ ] SR Demand
 - [ ] ACK/NACK Demand
