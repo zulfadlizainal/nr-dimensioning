@@ -44,7 +44,9 @@ Number of Scheduling Needed / 10ms Frame
 Eg: The number of scheduling demand / frame for a range of subscribers with different user behaviour.
 <br />
 <br />
-<img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/Scheduled_Data.png" alt="Data Scheduling Demand" title="Data Scheduling Demand" width=70% height=70% />
+<p align="center">
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/Scheduled_Data.png" alt="Data Scheduling Demand" title="Data Scheduling Demand" width=50% height=50% />
+</p>
 <br />
 <br />
 
