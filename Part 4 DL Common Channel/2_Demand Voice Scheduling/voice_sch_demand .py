@@ -41,7 +41,7 @@ df_subs.plot(style=['v--', 's--', '8--'], markersize=5, markerfacecolor='None', 
              x='Subscribers', y=['Short User (20 Sec)', 'Mid User (60 Sec)', 'Long User (300 Sec)'])
 
 plt.title(
-    f'[NR VOICE]\nNumber of Scheduling Needed / 10ms Frame\n\nAssumptions:\nUtilized Period [Voice Packet Transfer (DL+UL)] = {(voice_act_factor)*100} %\nNumber of Calls / UE / Hour (MO+MT) = {mo_call_nbh+mt_call_nbh}\nScheduling Periodicity = {voice_packet_periodicity} ms\nBLER = {bler*100}%\n', fontsize=10)
+    f'[5G VONR]\nNumber of Scheduling Needed / 10ms Frame\n\nAssumptions:\nUtilized Period [Voice Packet Transfer (DL+UL)] = {(voice_act_factor)*100} %\nNumber of Calls / UE / Hour (MO+MT) = {mo_call_nbh+mt_call_nbh}\nScheduling Periodicity = {voice_packet_periodicity} ms\nBLER = {bler*100}%\n', fontsize=10)
 plt.ylabel('Scheduling Needed')
 plt.xlabel('Number of VoNR Devices / Cell')
 plt.ylim(0, 20)
