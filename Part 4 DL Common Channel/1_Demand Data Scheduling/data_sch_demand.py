@@ -40,9 +40,9 @@ df_subs.plot(style=['v--', 's--', '8--'], markersize=5, markerfacecolor='None', 
              x='Subscribers', y=['Short User (20 Sec)', 'Mid User (60 Sec)', 'Long User (300 Sec)'])
 
 plt.title(
-    f'[NR DATA]\nNumber of Scheduling Needed / 10ms Frame\n\nAssumptions:\nUtilized Period [RRC Session (DL+UL)] = {(dl_act_factor+ul_act_factor)*100} %\nNumber of RRC / UE / Hour (MO+MT) = {mo_avgrrcuser_nbh+mt_avgrrcuser_nbh}\nScheduling Periodicity = {sch_periodicity} ms\nBLER = {bler*100}%\n', fontsize=10)
+    f'[5G NR DATA]\nNumber of Scheduling Needed / 10ms Frame\n\nAssumptions:\nUtilized Period [RRC Session (DL+UL)] = {(dl_act_factor+ul_act_factor)*100} %\nNumber of RRC / UE / Hour (MO+MT) = {mo_avgrrcuser_nbh+mt_avgrrcuser_nbh}\nScheduling Periodicity = {sch_periodicity} ms\nBLER = {bler*100}%\n', fontsize=10)
 plt.ylabel('Scheduling Needed')
-plt.xlabel('Number of UE / Cell')
+plt.xlabel('Number of UE / Cell')               
 plt.ylim(0, 180)
 plt.xlim(0, 250)
 plt.grid()
