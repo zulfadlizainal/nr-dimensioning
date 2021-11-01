@@ -18,5 +18,5 @@ Number of CCE and CCE RE needed based on data and voice scheduling demand.
 
 #### 4. PDCCH Utilization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/4_PDCCH%20Utilization))
 
-PDCCH utilization % based on data and voice scheduling demand.
+NR PDCCH utilization % based on data and voice scheduling demand.
 <br />
