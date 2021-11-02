@@ -139,10 +139,10 @@ df_pdsch_sinr[f'SCS_{scs_three}kHz_BW{bw_three}MHz'] = df_pdsch_sinr['CCE-RE/Fra
 df_pdsch_sinr[[f'SCS_{scs_one}kHz_BW{bw_one}MHz', f'SCS_{scs_two}kHz_BW{bw_two}MHz', f'SCS_{scs_three}kHz_BW{bw_three}MHz']
               ].plot(style=['v--', 's--', '8--'], markersize=3, markerfacecolor='None', color=['r', 'b', 'k'])
 plt.title(
-    f'[5G NR DATA + VONR]\nNumber of CCE Needed / 10ms Frame\n\nAssumptions:\nUtilization: Data = {(dl_act_factor+ul_act_factor)*100} %, Voice = {(voice_act_factor)*100} %\nNumber of Attempt: Data = {mo_avgrrcuser_nbh+mt_avgrrcuser_nbh}, Voice = {mo_call_nbh+mt_call_nbh}\nScheduling Periodicity: Data = {sch_periodicity} ms, Voice = {voice_packet_periodicity} ms\nBLER = {bler*100}%\nUsage Duration = {user_duration*3600} Secs \nTotal UE/Cell = {data_subscribers}\n\nPDCCH Symbol Used = {pdcch_symbols}\nTDD DL Slot Config = {tdd_dl_slot}\n', fontsize=10)
+    f'[5G NR DATA + VONR]\nNumber of CCE Needed / 10ms Frame\n\nAssumptions:\nUtilization: Data = {(dl_act_factor+ul_act_factor)*100} %, Voice = {(voice_act_factor)*100} %\nNumber of Attempt: Data = {mo_avgrrcuser_nbh+mt_avgrrcuser_nbh}, Voice = {mo_call_nbh+mt_call_nbh}\nScheduling Periodicity: Data = {sch_periodicity} ms, Voice = {voice_packet_periodicity} ms\nBLER = {bler*100}%\nUsage Duration = {user_duration*3600} Secs \nTotal UE/Cell = {data_subscribers}\n\nPDCCH Symbol Used = {pdcch_symbols}\nTDD DL Slot Config = {tdd_dl_slot*100/10}%\n', fontsize=10)
 plt.ylabel('PDCCH Utilization %')
 plt.xlabel('PDSCH SINR (dB)')
-plt.ylim(0,100)
+plt.ylim(0, 100)
 plt.xlim(-8, 30)
 plt.grid()
 plt.legend(title='Bandwidth Settings')
