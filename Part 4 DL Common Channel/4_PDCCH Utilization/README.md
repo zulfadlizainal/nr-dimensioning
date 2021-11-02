@@ -124,7 +124,7 @@ Eg: PDCCH utilization % based on sets of assumptions and RF conditions.
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/SINR_PDCCHUtil_Threshold.png" alt="CCE-RE per Aggr Level" title="CCE-RE per Aggr Level" width=50% height=50% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/SINR_PDCCHUtil_Threshold.png" alt="CCE-RE per Aggr Level" title="CCE-RE per Aggr Level" width=70% height=70% />
 </p>
 <br />
 <br />
