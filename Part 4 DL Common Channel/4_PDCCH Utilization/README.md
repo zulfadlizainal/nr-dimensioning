@@ -1,6 +1,6 @@
-# PDCCH CCE and PDCCH RE Demand
+# PDCCH Utilization
 
-The objective of this simulation is to calculate how many PDCCH CCE and PDCCH RE needed with a certain sets of scheduling demand. This simulations will consider the factor of CCE aggregation level based on PDSCH SINR.
+The objective of this simulation is to calculate how many PDCCH Utilization % needed with a certain sets of scheduling demand. This simulations will consider the factor of CCE aggregation level based on PDSCH SINR.
 
 ### Simulation Concept Diagram
 
@@ -29,16 +29,15 @@ The objective of this simulation is to calculate how many PDCCH CCE and PDCCH RE
                           │ │ │
                           │ │ │
                           │ │ │
-                          ▼ ▼ ▼
-    
-                       FINAL GOAL
-                   PDCCH DIMENSIONING
+                          ▼ ▼ ▼   
+                    PDCCH Utilization %
+                  (DIMENSIONING REFERENCE)
 
 ### Assumptions
 
-Based on NR scheduling demand in ([5G Data Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/1_Demand%20Data%20Scheduling)) and ([5G VoNR Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/2_Demand%20Voice%20Scheduling)), the PDCCH CCE and PDCCH RE will be calculated.
+Based on NR scheduling demand in ([5G Data Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/1_Demand%20Data%20Scheduling)) and ([5G VoNR Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/2_Demand%20Voice%20Scheduling)), the ([PDCCH CCE and RE](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/3_PDCCH%20Demand) needed for these scheduling demand is calculated.
 
-Additional assumptions for this simulations includes a consideration of RF condition factor towards CCE aggregation level. Actual PDSCH SINR vs CCE Aggregation level from live network is being used as an assumptions.
+The simulations also consider RF condition factor towards CCE aggregation level. Actual PDSCH SINR vs CCE Aggregation level from live network is being used as an assumptions.
 
 <br />
 <br />
@@ -92,18 +91,31 @@ PDCCH/DCI - CCE - REG - RE Mapping in 5G NR
                                      │
                                  CCE │
 
+Maximum 3 PDCCH symbols is assummed to be used in this simulation.
+
+    12 │ RE
+       │ RE
+    S  │ RE
+    u  │ RE
+    b  │ RE
+    c  │ RE
+    a  │ RE
+    r  │ RE
+    r  │ RE
+    i  │ RE
+    e  │ RE
+    r  ▼ RERERE
+    s    ─────►
+         3 Symbols
+
 ### Calculation
 
-Number of PDCCH CCE Needed / 10ms Frame
+PDCCH Utilization %
 
-    (Demand for Data Scheduling + Demand for VoNR Scheduling) * CCE Aggregation Level
+    PDCCH CCE RE Needed / (Number of PRB * 12 Subcarriers * PDCCH OFDM Symbols * Number of DL Slots per Frame)
 
-Number of PDCCH RE Needed / 10ms Frame
-
-    (Demand for Data Scheduling + Demand for VoNR Scheduling) * CCE Aggregation Level * 6 * 12
-
-    ** 6 refers to 6 REGs in 1 CCE
-    ** 12 refers to 12 REs in 1 REG
+    ** Number of PRB in 5G depends on total bandwidth and SCS
+    ** Number of DL Slots per Frame depending on % of TDD DL slots in a 10ms frame
 
 
 ### Results
