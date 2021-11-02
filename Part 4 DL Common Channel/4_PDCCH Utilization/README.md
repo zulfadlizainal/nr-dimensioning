@@ -120,20 +120,12 @@ PDCCH Utilization %
 
 ### Results
 
-Eg: The number of CCE / frame & CCE-RE / frame needed based on CCE aggregation level.
+Eg: PDCCH utilization % based on sets of assumptions and RF conditions.
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/CCE-RE_AggLev_Combine.png" alt="CCE-RE per Aggr Level" title="CCE-RE per Aggr Level" width=100% height=100% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/SINR_PDCCHUtil_Threshold.png" alt="CCE-RE per Aggr Level" title="CCE-RE per Aggr Level" width=100% height=100% />
 </p>
 <br />
 <br />
 
-Eg: The number of CCE / frame & CCE-RE / frame needed based on PDSCH SINR.
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%204%20DL%20Common%20Channel/img/CCE-RE_SINR_Combine.png" alt="CCE-RE per SINR" title="CCE-RE per SINR" width=100% height=100% />
-</p>
-<br />
-<br />
