@@ -36,7 +36,7 @@ The objective of this simulation is to calculate how many PDCCH CCE and PDCCH RE
 
 ### Assumptions
 
-Based on NR scheduling demand in ([5G Data Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/1_Demand%20Data%20Scheduling)) and ([5G VoNR Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/2_Demand%20Voice%20Scheduling)), the PDCCH CCE and PDCCH RE will be calcualted.
+Based on NR scheduling demand in ([5G Data Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/1_Demand%20Data%20Scheduling)) and ([5G VoNR Scheduling Demand](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel/2_Demand%20Voice%20Scheduling)), the PDCCH CCE and PDCCH RE will be calculated.
 
 Additional assumptions for this simulations includes a consideration of RF condition factor towards CCE aggregation level. Actual PDSCH SINR vs CCE Aggregation level from live network is being used as an asuumptions.
 
