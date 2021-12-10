@@ -246,8 +246,6 @@ df_fr2['PDCCH-RE/Frame'] = pdcch_usage_percentage_fr2 * \
     df_fr2['Normal CP RE/Frame']
 
 ########################################################################################
-#####################################   FINAL   ########################################
-########################################################################################
 
 ### Calculate PDSCH RE/Frame ###
 
@@ -259,7 +257,40 @@ df_fr2['PDSCH-RE/Frame'] = df_fr2['Normal CP DL RE/Frame'] - df_fr2['SSB RE/Fram
     df_fr2['DL CSI-RE/Frame'] - df_fr2['DL PTRS-RE/Frame'] - \
     df_fr2['DL TRS-RE/Frame'] - df_fr2['PDCCH-RE/Frame']
 
-### Calculate PDSCH RE vs DL Overhead % ###
+########################################################################################
+
+# Calculate Distribution of Every Channel
+
+
+df_fr1['DL PTRS-RE %'] = (df_fr1['DL PTRS-RE/Frame'] /
+                          df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['DL PTRS-RE %'] = (df_fr2['DL PTRS-RE/Frame'] /
+                          df_fr2['Normal CP DL RE/Frame']) * 100
+
+df_fr1['DL TRS-RE %'] = (df_fr1['DL TRS-RE/Frame'] /
+                         df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['DL TRS-RE %'] = (df_fr2['DL TRS-RE/Frame'] /
+                         df_fr2['Normal CP DL RE/Frame']) * 100
+
+df_fr1['DL CSI-RE %'] = (df_fr1['DL CSI-RE/Frame'] /
+                         df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['DL CSI-RE %'] = (df_fr2['DL CSI-RE/Frame'] /
+                         df_fr2['Normal CP DL RE/Frame']) * 100
+
+df_fr1['DL DMRS-RE %'] = (df_fr1['DL DMRS RE/Frame'] /
+                          df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['DL DMRS-RE %'] = (df_fr2['DL DMRS RE/Frame'] /
+                          df_fr2['Normal CP DL RE/Frame']) * 100
+
+df_fr1['SSB-RE %'] = (df_fr1['SSB RE/Frame'] /
+                      df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['SSB-RE %'] = (df_fr2['SSB RE/Frame'] /
+                      df_fr2['Normal CP DL RE/Frame']) * 100
+
+df_fr1['PDCCH-RE %'] = (df_fr1['PDCCH-RE/Frame'] /
+                        df_fr1['Normal CP DL RE/Frame']) * 100
+df_fr2['PDCCH-RE %'] = (df_fr2['PDCCH-RE/Frame'] /
+                        df_fr2['Normal CP DL RE/Frame']) * 100
 
 df_fr1['PDSCH-RE %'] = (df_fr1['PDSCH-RE/Frame'] /
                         df_fr1['Normal CP DL RE/Frame']) * 100
@@ -269,21 +300,25 @@ df_fr2['PDSCH-RE %'] = (df_fr2['PDSCH-RE/Frame'] /
 df_fr1['DL Overhead %'] = 100 - df_fr1['PDSCH-RE %']
 df_fr2['DL Overhead %'] = 100 - df_fr2['PDSCH-RE %']
 
-### Calculate Avg of all SCS ###
+########################################################################################
 
-df_fr1_summary = pd.pivot_table(
+# Plot 1
+
+### Calculate Avg of all BW ###
+
+df_fr1_plot1 = pd.pivot_table(
     df_fr1, values='PDSCH-RE %', index='Bandwidth (MHz)', columns='SCS (kHz)', aggfunc=np.mean)
-df_fr1_summary['PDSCH-RE %'] = df_fr1_summary.mean(axis=1)
-df_fr1_summary['DL Overhead %'] = 100 - df_fr1_summary['PDSCH-RE %']
+df_fr1_plot1['PDSCH-RE %'] = df_fr1_plot1.mean(axis=1)
+df_fr1_plot1['DL Overhead %'] = 100 - df_fr1_plot1['PDSCH-RE %']
 
-df_fr2_summary = pd.pivot_table(
+df_fr2_plt1 = pd.pivot_table(
     df_fr2, values='PDSCH-RE %', index='Bandwidth (MHz)', columns='SCS (kHz)', aggfunc=np.mean)
-df_fr2_summary['PDSCH-RE %'] = df_fr2_summary.mean(axis=1)
-df_fr2_summary['DL Overhead %'] = 100 - df_fr2_summary['PDSCH-RE %']
+df_fr2_plt1['PDSCH-RE %'] = df_fr2_plt1.mean(axis=1)
+df_fr2_plt1['DL Overhead %'] = 100 - df_fr2_plt1['PDSCH-RE %']
 
 ### Plotting PDSCH RE Space vs DL Overhead ###
 
-df_fr1_summary[['PDSCH-RE %', 'DL Overhead %']].plot(
+df_fr1_plot1[['PDSCH-RE %', 'DL Overhead %']].plot(
     style=['v--', '8--'], markersize=7, markerfacecolor='None', color=['k', 'r'])
 
 plt.title(
@@ -298,7 +333,7 @@ plt.legend(title='DL RE Type', loc='center right')
 plt.show()
 
 
-df_fr2_summary[['PDSCH-RE %', 'DL Overhead %']].plot(
+df_fr2_plt1[['PDSCH-RE %', 'DL Overhead %']].plot(
     style=['v--', '8--'], markersize=7, markerfacecolor='None', color=['k', 'r'])
 
 plt.title(
@@ -309,5 +344,70 @@ plt.ylim(0, 100)
 plt.xlim(0, 400)
 plt.grid()
 plt.legend(title='DL RE Type', loc='center right')
+
+plt.show()
+
+
+########################################################################################
+
+# Plot 2
+
+### Calculate Avg of all BW ###
+
+df_fr1_plot2 = pd.pivot_table(
+    df_fr1, values=['SSB-RE %', 'DL DMRS-RE %', 'DL CSI-RE %', 'DL PTRS-RE %', 'DL TRS-RE %', 'PDCCH-RE %', 'PDSCH-RE %'], index='Bandwidth (MHz)', aggfunc=np.mean)
+
+df_fr1_plot2 = df_fr1_plot2.rename(columns={'DL PTRS-RE %': '1_DL PTRS-RE %',
+                                            'DL TRS-RE %': '2_DL TRS-RE %',
+                                            'DL CSI-RE %': '3_DL CSI-RE %',
+                                            'DL DMRS-RE %': '4_DL DMRS-RE %',
+                                            'SSB-RE %': '5_SSB-RE %',
+                                            'PDCCH-RE %': '6_PDCCH-RE %',
+                                            'PDSCH-RE %': '7_PDSCH-RE %'})
+
+df_fr1_plot2 = df_fr1_plot2.reindex(sorted(df_fr1_plot2.columns), axis=1)
+
+df_fr2_plot2 = pd.pivot_table(
+    df_fr2, values=['SSB-RE %', 'DL DMRS-RE %', 'DL CSI-RE %', 'DL PTRS-RE %', 'DL TRS-RE %', 'PDCCH-RE %', 'PDSCH-RE %'], index='Bandwidth (MHz)', aggfunc=np.mean)
+
+df_fr2_plot2 = df_fr2_plot2.rename(columns={'DL PTRS-RE %': '1_DL PTRS-RE %',
+                                            'DL TRS-RE %': '2_DL TRS-RE %',
+                                            'DL CSI-RE %': '3_DL CSI-RE %',
+                                            'DL DMRS-RE %': '4_DL DMRS-RE %',
+                                            'SSB-RE %': '5_SSB-RE %',
+                                            'PDCCH-RE %': '6_PDCCH-RE %',
+                                            'PDSCH-RE %': '7_PDSCH-RE %'})
+
+df_fr2_plot2 = df_fr2_plot2.reindex(sorted(df_fr2_plot2.columns), axis=1)
+
+### Plotting RE Distribution ###
+
+color = ['indigo', 'midnightblue', 'steelblue',
+         'teal', 'limegreen', 'tomato', 'firebrick']
+
+df_fr1_plot2.plot(kind="bar", stacked=True, color=color, width=0.9)
+plt.title(
+    f'[5G NR FR1 SUB6]\nDL RE PHY Channel Distribution %\n\nAssumptions:\nTDD DL Slot % = {tdd_dl_slot_percent*100} %\n& Typical Assumptions for other DL channels*\n', fontsize=11)
+plt.ylabel('DL RE Space %')
+plt.xlabel('Bandwidth (MHz)')
+plt.ylim(0, 100)
+# plt.xlim(0, 100)
+# plt.grid()
+plt.legend(title='DL RE Type', loc='upper center',
+           bbox_to_anchor=(1.2, 1), fancybox=True)
+
+plt.show()
+
+
+df_fr2_plot2.plot(kind="bar", stacked=True, color=color, width=0.9)
+plt.title(
+    f'[5G NR FR2 mmWave]\nDL RE PHY Channel Distribution %\n\nAssumptions:\nTDD DL Slot % = {tdd_dl_slot_percent*100} %\n& Typical Assumptions for other DL channels*\n', fontsize=11)
+plt.ylabel('DL RE Space %')
+plt.xlabel('Bandwidth (MHz)')
+plt.ylim(0, 100)
+# plt.xlim(0, 100)
+# plt.grid()
+plt.legend(title='DL RE Type', loc='upper center',
+           bbox_to_anchor=(1.2, 1), fancybox=True)
 
 plt.show()
