@@ -25,12 +25,11 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 - [X] PDCCH CCE and PDCCH RE Demand :heavy_check_mark:
 - [X] PDCCH Utilization :heavy_check_mark:
 
-### Part 5: PDSCH ([Link](https://))
+### Part 5: PDSCH ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH))
 
-- [ ] Total DL RE Space
+- [X] PDSCH RE Space vs DL Overhead
 - [ ] Cell DL Throughput
-- [ ] Cell User Throughput
-- [ ] DL Overhead
+- [ ] User DL Throughput
 
 ### Part 6: Paging ([Link](https://))
 
