@@ -32,7 +32,7 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated.
 
 ### Assumptions
 
-Overall DL RE/Frame ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count))
+Total DL RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count))
 
     DL Slot Percentage is assumed based on TDD DL Ratio 
     
@@ -61,7 +61,36 @@ SSB RE
 
 DL DMRS RE
 
-    XXX
+    DMRS Rules (Specs)
+
+    Type1:
+
+    1. One OFDM Symbols = Up to 4 Ports
+    2. Two OFDM Symbols = Up to 8 Ports
+
+    Type2:
+
+    1. One OFDM Symbols = Up to 6 Ports
+    2. Two OFDM Symbols = Up to 12 Ports
+
+    DMRS Ports (Assume)
+
+    dmrs_ports_fr1 = 4
+    dmrs_ports_fr2 = 4
+
+    DMRS Symbols (Assume) - Can be One or Two
+
+    dmrs_symbols_fr1 = 2
+    dmrs_symbols_fr2 = 2
+
+    PDSCH Layers (Assume)
+
+    pdsch_layer_number_fr1 = 4
+    pdsch_layer_number_fr2 = 4
+
+    DL DMRS RE/Frame
+
+    dl_dmrs_re_frame = RB Count * (Slots/Frame') * tdd_dl_slot_percent * (dmrs_ports * dmrs_symbols * pdsch_layer_number)
 
 DL CSI RE
 
@@ -96,8 +125,7 @@ DL PTRS RE
 
     DL PT-RS RE/Frame
 
-    DL PTRS RE = (RB / ptrs_frequency_density) * Slots/Frame * tdd_dl_slot_percent * ((normal_cp_symbols - pdcch_symbols -
-         dmrs_symbols) / ptrs_time_density)
+    dl_ptrs_re_frame = (RB Count / ptrs_frequency_density) * (Slots/Frame) * tdd_dl_slot_percent * ((normal_cp_symbols - pdcch_symbols - dmrs_symbols) / ptrs_time_density)
 
 DL TRS RE
 
