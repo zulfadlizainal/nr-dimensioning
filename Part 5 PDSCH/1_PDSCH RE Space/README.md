@@ -110,7 +110,7 @@ DL CSI RE
 
     dl_csi_re_frame = RB Count * csi_rs_port * (10/(csi_rs_slot_periodicity * Slot Duration (ms)']))
 
-Reference for CSI-RS settings from 3GPP TS38.211
+Reference for CSI-RS settings from 3GPP TS 38.211
 
 <br />
 <p align="center">
@@ -195,7 +195,7 @@ PDSCH RE
 
 ### Results
 
-PDSCH RE vs DL Overhead for 5G Sub 6 and mmWave.
+PDSCH RE vs DL Overhead for 5G Sub6 and mmWave.
 <br />
 <br />
 <p align="center">
@@ -204,7 +204,7 @@ PDSCH RE vs DL Overhead for 5G Sub 6 and mmWave.
 <br />
 <br />
 
-5G DL Channels and Signals distribution for 5G Sub 6 and mmWave.
+DL channels/signals distribution for 5G Sub6 and mmWave.
 <br />
 <br />
 <p align="center">
