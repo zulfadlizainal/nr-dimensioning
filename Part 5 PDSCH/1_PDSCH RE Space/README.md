@@ -25,7 +25,7 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated.
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_Tput_Calc_Concept.jpg" alt="DL Tput Calculation Concept" title="PDSCH RE vs DL Overhead" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_Tput_Calc_Concept.jpg" alt="DL Tput Calculation Concept" title="DL Tput Calculation Concept" width=70% height=70% />
 </p>
 <br />
 <br />
@@ -38,7 +38,7 @@ Total DL RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensi
     
     Eg: tdd_dl_slot_percent = 70%
 
-SSB RE
+SSB RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
     SSB Size (Specs)
 
@@ -94,7 +94,29 @@ DL DMRS RE
 
 DL CSI RE
 
-    XXX
+    CSI-RS Port (Assume) -  Based on CSI-RS Settings table
+
+    csi_rs_port_fr1 = 4
+    csi_rs_port_fr2 = 4
+
+    CSI-RS Slot Periodicity (Assume) -  can be [4, 5, 8, 10, 16, 20, 40, 80, 160, 320]
+
+    csi_rs_slot_periodicity_fr1 = 4
+    csi_rs_slot_periodicity_fr2 = 20
+
+    DL CSI-RS RE/Frame
+
+    dl_csi_re_frame = RB Count * csi_rs_port * (10/(csi_rs_slot_periodicity * Slot Duration (ms)']))
+
+Reference for CSI RE settings from 3GPP TS38.211
+
+<br />
+<br />
+<p align="center">
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/3GPP_TS_38_211_CsiRsSettings.jpg" alt="CSI RS Table 3GPP" title="CSI RS Table 3GPP" width=70% height=70% />
+</p>
+<br />
+<br />
 
 DL PTRS RE
 
