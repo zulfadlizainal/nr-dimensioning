@@ -1,11 +1,11 @@
 # PDSCH RE Space vs DL Overhead
 
-The objective of this calculation is to estimate how much PDSCH RE is available considering other DL signal overhead. This calculation is important because PDSCH RE directly correlated to DL throughput that its going to generate.
+The objective of this calculation is to estimate how much PDSCH RE is available considering other DL signal overhead. This calculation is a prerequisite for DL throughput calculation.
 
 ### RE Type for DL and UL
 
-                    5G NR RE
-                        │
+                       5G NR RE
+                          │
             ┌─────────────┴────────────┐
             ▼                          ▼
           DL RE                      UL RE
@@ -37,6 +37,8 @@ Total DL RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensi
     DL Slot Percentage is assumed based on TDD DL Ratio 
     
     Eg: tdd_dl_slot_percent = 70%
+
+    total_dl_re_frame = total_re_frame * tdd_dl_slot_percent
 
 SSB RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
@@ -108,17 +110,17 @@ DL CSI RE
 
     dl_csi_re_frame = RB Count * csi_rs_port * (10/(csi_rs_slot_periodicity * Slot Duration (ms)']))
 
-Reference for CSI RE settings from 3GPP TS38.211
+Reference for CSI-RS settings from 3GPP TS38.211
 
-<br />
 <br />
 <p align="center">
     <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/3GPP_TS_38_211_CsiRsSettings.jpg" alt="CSI RS Table 3GPP" title="CSI RS Table 3GPP" width=100% height=100% />
 </p>
 <br />
-<br />
 
 DL PTRS RE
+
+    PTRS Rules (Specs)
 
     1. Only for High Frequency Phase Tracking (mmWave/FR2)
     2. Configured by RRC
@@ -151,7 +153,7 @@ DL PTRS RE
 
 DL TRS RE
 
-    TRS RE / RB - Only 3 RE/RB
+    TRS RE / RB - Only 3 RE/RB (Specs)
 
     trs_subcarrier_perRB_fr1 = 3
     trs_subcarrier_perRB_fr2 = 3
@@ -185,11 +187,11 @@ PDCCH RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioni
 
 DL Overhead
 
-    XXX
+    dl_overhead_frame = ssb_re_frame + dl_dmrs_re_frame + dl_csi_re_frame + dl_ptrs_re_frame + dl_trs_re_frame + dl_pdcch_re_frame
 
 PDSCH RE
 
-    XXX
+    pdsch_re_frame = total_dl_re_frame - dl_overhead_frame
 
 ### Results
 
