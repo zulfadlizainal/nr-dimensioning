@@ -113,7 +113,7 @@ Reference for CSI RE settings from 3GPP TS38.211
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/3GPP_TS_38_211_CsiRsSettings.jpg" alt="CSI RS Table 3GPP" title="CSI RS Table 3GPP" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/3GPP_TS_38_211_CsiRsSettings.jpg" alt="CSI RS Table 3GPP" title="CSI RS Table 3GPP" width=100% height=100% />
 </p>
 <br />
 <br />
@@ -151,12 +151,36 @@ DL PTRS RE
 
 DL TRS RE
 
-    XXX
+    TRS RE / RB - Only 3 RE/RB
 
-PDCCH RE
+    trs_subcarrier_perRB_fr1 = 3
+    trs_subcarrier_perRB_fr2 = 3
 
-    XXX
+    TRS Symbol / Burst (Assume) - 4 Symbol for FR1, can be [2, 4] Symbol for FR2
 
+    trs_symbol_perBurst_fr1 = 4
+    trs_symbol_perBurst_fr2 = 4
+
+    TRS Burst Periodicity (Assume) - can be [10, 20, 40, 80] ms
+
+    trs_burst_periodicity_fr1 = 80
+    trs_burst_periodicity_fr2 = 80
+
+    DL CSI-RS RE/Frame
+
+    dl_trs_re_frame = RB Count * trs_subcarrier_perRB * trs_symbol_perBurst * (10/trs_burst_periodicity)
+    
+PDCCH RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel))
+
+    PDCCH RE is really flexible in 5G and can be a lot based on demand. For this simulation - asummption of PDCCH resources is assumed.
+
+    pdcch_usage_percentage_fr1 = 1.2/100
+    pdcch_usage_percentage_fr2 = 0.25/100
+
+    PDCCH RE/Frame
+
+    dl_pdcch_re_frame = pdcch_usage_percentage * (Normal CP RE/Frame)
+    
 ### Calculation
 
 DL Overhead
