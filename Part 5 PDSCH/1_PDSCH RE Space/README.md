@@ -32,13 +32,38 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated.
 
 ### Assumptions
 
-Overall DL RE/Frame ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count)
+Overall DL RE/Frame ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/3_RE%20Count))
 
     DL Slot Percentage is assumed based on TDD DL Ratio 
     
     Eg: tdd_dl_slot_percent = 70%
 
+SSB RE
+
+    SSB Size (Specs)
+
+    ssb_symbols = 4
+    ssb_subcarriers = 270
+
+    No of Beams (Assume) - No of SSB Beam / SSB Burst (L) can be FR1 = [1, 2, 4, 8], FR2 = [1, 2, 4, 8, 16, 32, 64]
+
+    ssb_beam_fr1 = 4
+    ssb_beam_fr2 = 16
+
+    SSB Periodicity (Assume) - SSB Periodicity (ms) can be [5, 10, 20, 40, 80, 160]
+
+    ssb_periodicity_fr1 = 10
+    ssb_periodicity_fr2 = 10
+
+    SSB RE/Frame
+
+    ssb_re_frame = ssb_symbols * ssb_subcarriers * ssb_beam * (10/ssb_periodicity)
+
 DL DMRS RE
+
+    XXX
+
+DL CSI RE
 
     XXX
 
@@ -48,6 +73,8 @@ DL PTRS RE
     2. Configured by RRC
     3. Time Density (TD) PTRS increase when MCS increase
     4. Frequency Density (FD) decrease when BW increase
+
+    CP Config (Specs)
 
     normal_cp_symbols = 14
     extended_cp_symbols = 12
@@ -67,18 +94,12 @@ DL PTRS RE
     pdcch_symbols_fr1 = 3
     pdcch_symbols_fr2 = 3
 
+    DL PT-RS RE/Frame
+
     DL PTRS RE = (RB / ptrs_frequency_density) * Slots/Frame * tdd_dl_slot_percent * ((normal_cp_symbols - pdcch_symbols -
          dmrs_symbols) / ptrs_time_density)
 
 DL TRS RE
-
-    XXX
-
-DL CSI RE
-
-    XXX
-
-SSB RE
 
     XXX
 
@@ -88,11 +109,11 @@ PDCCH RE
 
 ### Calculation
 
-PDSCH RE
+DL Overhead
 
     XXX
 
-DL Overhead
+PDSCH RE
 
     XXX
 
