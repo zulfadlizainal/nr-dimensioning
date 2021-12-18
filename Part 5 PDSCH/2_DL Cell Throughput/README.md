@@ -100,7 +100,7 @@ DL Cell Throughput formula is constructed as below:
 
 ### Results
 
-Eg: 5G NR DL cell throughput based on bandwidth:
+Eg: 5G NR DL cell throughput based on bandwidth
 <br />
 <br />
 <p align="center">
