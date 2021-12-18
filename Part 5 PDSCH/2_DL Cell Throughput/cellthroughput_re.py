@@ -321,7 +321,7 @@ cell_tput_four = df_fr2.loc[df_fr2['ID'] == f'{eg4}']
 # Calculate
 
 radio_frame_sec = 100
-dl_mu_mimo_gain = 0
+dl_mu_mimo_gain = 0/100
 dl_bler = 0/100  # DL BLER is already reflected in SE calculation
 
 df_se[f'{eg1}'] = ((cell_tput_one.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] * ((cell_tput_one.iloc[0]
