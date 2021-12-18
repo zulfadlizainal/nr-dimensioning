@@ -30,7 +30,7 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated. Calcu
 <br />
 <br />
 
-Once available PDSCH RE is calculated, its is then converted to throughput based spectral efficiency collected in the field using Qualcomm chipset UE.
+Once available PDSCH RE is calculated, it is then converted to throughput based spectral efficiency collected in the field using Qualcomm chipset UE.
 
                                                │ MCS
                                                │
@@ -61,7 +61,7 @@ Available PDSCH RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-
 
     total_dl_re_frame = total_re_frame * tdd_dl_slot_percent
 
-Spectral efficiency is derived from actual network testing using Qualcomm chipset UE. Similar spectral efficiency is assumed for all bands in this simulations
+Spectral efficiency is derived from actual network testing using Qualcomm chipset UE. Similar spectral efficiency is assumed for all bands in this simulation.
     
     Network settings:
 
@@ -74,9 +74,9 @@ Spectral efficiency is derived from actual network testing using Qualcomm chipse
     UE type:
 
     1. Qualcomm chipset UE
-    2. Support every features offered by network
+    2. Support all 5 features mentioned in the network settings
 
-PDSCH RE vs DL Overhead for 5G Sub6 and mmWave.
+Spectral efficiency curve derived from network testing is smoothen using polynomial regression (to derive estimated value). It is then compared with Shannon Theorem estimation for accuracy confirmation. Estimated spectral efficiency is choosen to be used this simulation. 
 <br />
 <br />
 <p align="center">
@@ -87,7 +87,7 @@ PDSCH RE vs DL Overhead for 5G Sub6 and mmWave.
 
 ### Calculation
 
-DL Cell Throughput
+DL Cell Throughput formula is constructed as below:
 
     dl_cell_throughput_mbps = (PDSCH-RE/Frame * radio_frame_sec) * (Estimated SE (bps/Hz) * (SCS (kHz)*1000) /((normal_cp_symbols * (Slots/Frame) * 100) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
 
@@ -100,7 +100,7 @@ DL Cell Throughput
 
 ### Results
 
-PDSCH RE vs DL Overhead for 5G Sub6 and mmWave.
+Eg: 5G NR DL cell throughput based on bandwidth:
 <br />
 <br />
 <p align="center">
