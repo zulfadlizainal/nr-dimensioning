@@ -321,29 +321,26 @@ cell_tput_four = df_fr2.loc[df_fr2['ID'] == f'{eg4}']
 # Calculate
 
 radio_frame_sec = 100
+dl_mu_mimo_gain = 0
+dl_bler = 0/100 # DL BLER is already reflected in SE calculation
 
-df_se[f'{eg1}'] = (cell_tput_one.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] *
-                                                                                 ((cell_tput_one.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_one.iloc[0]['Slots/Frame']*100))) / 1000000
-df_se[f'{eg2}'] = (cell_tput_two.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] *
-                                                                                 ((cell_tput_two.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_two.iloc[0]['Slots/Frame']*100))) / 1000000
-df_se[f'{eg3}'] = (cell_tput_three.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] *
-                                                                                 ((cell_tput_three.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_three.iloc[0]['Slots/Frame']*100))) / 1000000
-df_se[f'{eg4}'] = (cell_tput_four.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] *
-                                                                                 ((cell_tput_four.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_four.iloc[0]['Slots/Frame']*100))) / 1000000
+df_se[f'{eg1}'] = ((cell_tput_one.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] * ((cell_tput_one.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_one.iloc[0]['Slots/Frame']*100))) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
+df_se[f'{eg2}'] = ((cell_tput_two.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] * ((cell_tput_two.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_two.iloc[0]['Slots/Frame']*100))) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
+df_se[f'{eg3}'] = ((cell_tput_three.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] * ((cell_tput_three.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_three.iloc[0]['Slots/Frame']*100))) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
+df_se[f'{eg4}'] = ((cell_tput_four.iloc[0]['PDSCH-RE/Frame'] * radio_frame_sec) * (df_se['Estimated SE (bps/Hz)'] * ((cell_tput_four.iloc[0]['SCS (kHz)']*1000)/(normal_cp_symbols * cell_tput_four.iloc[0]['Slots/Frame']*100))) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
 
-# Include factor of MU-MIMO
-# Include BLER factor
 
 # Plot
 
 df_se[[f'{eg1}', f'{eg2}', f'{eg3}', f'{eg4}']].plot(style=['v--', 's--', '8--', 'h--'], markersize=3, markerfacecolor='None', color=['firebrick', 'limegreen', 'steelblue', 'indigo'])
 plt.title(
-    f'[5G NR]\nCell Throughput (Mbps)\n\nAssumptions:\nTDD DL Slot % = {tdd_dl_slot_percent*100} %\nSpectral Efficiency = Same for all bands\nMax MIMO Layers = 4\n', fontsize=11)
+    f'[5G NR]\nDownlink Cell Throughput (Mbps)\n\nAssumptions:\nTDD DL Slot % = {tdd_dl_slot_percent*100} %\nMU MIMO Gain = {dl_mu_mimo_gain*100} %\nSpectral Efficiency = Same for all bands\nMax MIMO Layers = 4, BLER = 10%\n', fontsize=11)
 plt.ylabel('Mbps')
 plt.xlabel('SS-SINR (dB)')
-plt.ylim(0, 4000)
+plt.ylim(0, 3000)
 plt.xlim(-10, 20)
 plt.grid()
 plt.legend(title='Type (FR)_SCS (kHz)_BW (MHz)', loc='upper center', bbox_to_anchor=(1.28, 1), fancybox=True)
 
+# plt.savefig('5G_DL_Cell_Throughput_Result.png', dpi=300, bbox_inches='tight')
 plt.show()
