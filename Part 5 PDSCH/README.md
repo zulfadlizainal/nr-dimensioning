@@ -6,9 +6,9 @@ Simulations on the topics DL PDSCH in 5G NR.
 RE space distribution for PDSCH vs its other DL physical channel overhead.
 <br />
 
-#### 2. Cell DL Throughput ([Link]())
+#### 2. Cell DL Throughput ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH/2_DL%20Cell%20Throughput))
 
-To be updated.
+Simulation of cell DL throughput based on calculated DL physical channel overhead and spectral efficiency.
 <br />
 
 #### 3. User DL Throughput ([Link]())
