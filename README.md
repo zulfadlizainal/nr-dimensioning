@@ -28,7 +28,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 ### Part 5: PDSCH ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH))
 
 - [X] PDSCH RE Space vs DL Overhead :heavy_check_mark:
-- [X] Cell DL Throughput
+- [X] Cell DL Throughput :heavy_check_mark:
 - [ ] User DL Throughput
 
 ### Part 6: Paging ([Link](https://))
