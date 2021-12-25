@@ -162,7 +162,7 @@ Eg: 5G NR DL user throughput for FR1 30kHz SCS 100MHz Bandwidth
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_3DResult.png" alt="User Tput 3D" title="User Tput 3Dt" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UserLocResult.png" alt="User Tput / Loc" title="User Tput / Loc" width=100% height=100% />
 </p>
 <br />
 <br />
@@ -170,24 +170,7 @@ Eg: 5G NR DL user throughput for FR1 30kHz SCS 100MHz Bandwidth
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UEID.png" alt="User Tput" title="User Tput" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RP_SNR_Result.png" alt="User Tput RF" title="User Tput RF" width=70% height=70% />
 </p>
 <br />
 <br />
-
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RSRP.png" alt="User Tput_RP" title="User Tput_RP" width=70% height=70% />
-</p>
-<br />
-<br />
-
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_SINR.png" alt="User Tput_SINR" title="User Tput_SINR" width=70% height=70% />
-</p>
-<br />
-<br />
-
