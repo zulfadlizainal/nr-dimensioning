@@ -1,6 +1,6 @@
 # User DL Throughput
 
-The objective of this calculation is to estimate DL user throughput for 5G NR based on user location within the cell. The estimation will incorporated the factor of UE number in a cell, its radio conditon, and its activity behaviour.
+The objective of this calculation is to estimate DL user throughput for 5G NR based on user location within the cell. The estimation will incorporated the factor of UE number in a cell, its radio condition, and its activity behavior.
 
 ### RE Type for DL and UL
 
