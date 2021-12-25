@@ -11,7 +11,7 @@ RE space distribution for PDSCH vs its other DL physical channel overhead.
 Simulation of cell DL throughput based on calculated DL physical channel overhead and spectral efficiency.
 <br />
 
-#### 3. User DL Throughput ([Link]())
+#### 3. User DL Throughput ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH/3_DL%20User%20Throughput))
 
-To be updated.
+Simulation of user DL throughput based on UE location and its activity factor.
 <br />
