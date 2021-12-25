@@ -402,7 +402,7 @@ plt.title(
 plt.ylabel('Mbps')
 plt.xlabel('SS-SINR (dB)')
 plt.ylim(0, 50)
-plt.xlim(-10, 17)
+plt.xlim(-7, 17)
 plt.grid()
 # plt.legend(['Default', 'High Demand UE', 'Low Demand UE'])
 plt.legend(['Full Buffer', 'High Demand UE', 'Low Demand UE'], title=f'BW Setting {band_select}', loc='upper center',
