@@ -120,7 +120,7 @@ Available PDSCH RE is distributed to every UE based on simplified round robin re
 <br />
 <br />
 
-Below relation between SS-RSRP and SS-SINR/RSRQ is used for mapping purpose.
+Below relation between SS-RSRP and SS-RSRQ & SS-SINR is used for RF relation derivation.
 <br />
 <br />
 <p align="center">
@@ -170,7 +170,7 @@ Eg: 5G NR DL user throughput for FR1 30kHz SCS 100MHz Bandwidth
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RP_SNR_Result.png" alt="User Tput RF" title="User Tput RF" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RP_SNR_Result.png" alt="User Tput RF" title="User Tput RF" width=100% height=100% />
 </p>
 <br />
 <br />
