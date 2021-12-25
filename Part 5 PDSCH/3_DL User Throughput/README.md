@@ -1,6 +1,6 @@
 # User DL Throughput
 
-The objective of this calculation is to estimate DL user throughput for 5G NR based on user location within the cell. The estimaation will incorporated the factor of UE number in a cell, its radio conditon, and its activity behaviour.
+The objective of this calculation is to estimate DL user throughput for 5G NR based on user location within the cell. The estimation will incorporated the factor of UE number in a cell, its radio conditon, and its activity behaviour.
 
 ### RE Type for DL and UL
 
@@ -30,7 +30,7 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated. Calcu
 <br />
 <br />
 
-Once available PDSCH RE is calculated, it is then converted to throughput based spectral efficiency collected in the field using Qualcomm chipset UE.
+Once available PDSCH RE is calculated, its is then scheduled to every UE in a cell using scheduler algorithm. PDSCH RE per UE is then converted to throughput based on spectral efficiency collected in the field using Qualcomm chipset UE. Estimated user throughput will also consider the factor of needed VoNR throughput per UE and its user behaviour in time domain.
 
                                                      │ MCS
                                                      │
@@ -102,20 +102,20 @@ Spectral efficiency curve derived from network testing is smoothen using polynom
 <br />
 <br />
 
-Users are randomly distributed in each cell from good RF range to poor RF range.
+Users are randomly distributed in each cell from good RF range to poor RF range. 
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UserLoc.png" alt="User Location" title="User Location" width=100% height=100% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UserLoc.png" alt="User Location" title="User Location" width=70% height=70% />
 </p>
 <br />
 <br />
 
-Available PDSCH RE is distributed to every UE based on simplified round robin resource allocation technique.
+Available PDSCH RE is distributed to every UE based on simplified round robin resource allocation technique. With this scheduler, every UE is assumed to get resource in time domain manner without any prioritization.
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RoundRobin.png" alt="RR" title="RR" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RoundRobin.png" alt="RR" title="RR" width=100% height=100% />
 </p>
 <br />
 <br />
@@ -142,13 +142,13 @@ DL User Throughput formula is constructed as below:
     dl_mu_mimo_gain = 0/100 (SE Calculation already considers MU-MIMO gain)
     dl_bler = 0/100 (SE Calculation already considers BLER)
 
-VoNR required throughput is deducted from DL User Throughput:
+VoNR required throughput is deducted from DL User Throughput to ensure guaranteed VoNR call at any session:
 
     where: 
     
     vonr_tput_mbps = 0.128
 
-DL User Throughput considers user activity factor:
+DL User Throughput considers user activity factor based on % of time where scheduling is needed:
 
     where:
 
