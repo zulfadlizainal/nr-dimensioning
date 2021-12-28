@@ -2,12 +2,13 @@
 # Github: https://github.com/zulfadlizainal
 # Linkedin: https://linkedin.com/in/zulfadlizainal
 
-# Paging Core
+# MT Users in the Area
 mt_rrc_hour = 900
+
+# Paging Core
 tac_size = 200
 
 # Paging RAN
-mo_rrc_hour = 900
 rrc_inactive_hour = 5
 ran_noti_area = 180
 
