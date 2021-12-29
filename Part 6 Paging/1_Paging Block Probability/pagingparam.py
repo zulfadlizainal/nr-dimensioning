@@ -3,7 +3,7 @@
 # Linkedin: https://linkedin.com/in/zulfadlizainal
 
 # MT Users in the Area
-mt_rrc_hour = 900
+mt_rrc_hour = 1800
 
 # Paging Core
 tac_size = 200
@@ -19,3 +19,9 @@ Ns = [4, 2, 1]                          # Ns = max(1, nB/T). nB can be [4T, 2T,T
 # UE allowed per paging message
 max_ue_per_paging_msg_val = 16
 max_ue_per_paging_msg = [4, 8, 12, 16, 20, 24, 28, 32]
+
+# UE per paging message - List
+ue_per_paging_msg = list(range(1, 101))
+
+# Color List
+color = ['navy', 'darkcyan', 'seagreen', 'olivedrab', 'gold', 'sienna', 'firebrick', 'dimgrey']

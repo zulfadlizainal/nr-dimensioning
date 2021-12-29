@@ -82,3 +82,47 @@ def paging_block_demand():
     plt.show()
 
     return block_prob
+
+def paging_block_matrix():
+
+    # Create a list of UE needed paging/msg vs Paging Msg UE number capability 
+    df_paging_ue = paginguelist.ue_per_paging_msg(ue_per_paging_msg, max_ue_per_paging_msg)
+    
+    # Calculate block probability
+
+    for i in range(len(df_paging_ue)):
+            df_paging_ue.loc[i, ['block_prob_%']] = pagingblock.ErlangB(
+                df_paging_ue.iloc[i]['ue_per_paging_msg'], df_paging_ue.iloc[i]['max_ue_per_paging_msg'])
+
+    # Clean data for plotting
+    df_paging_ue = df_paging_ue.sort_values(by=['ue_per_paging_msg'], ascending=True)
+    df_paging_ue = df_paging_ue.set_index('ue_per_paging_msg')
+
+    # Split dataframe for plotting
+    dict_df = {elem : pd.DataFrame for elem in max_ue_per_paging_msg}
+
+    for key in dict_df.keys():
+        dict_df[key] = df_paging_ue[:][df_paging_ue['max_ue_per_paging_msg'] == key]
+
+    # # # Plot (Blocking Probability for Every UE Demand vs Max UE/paging msg combation)
+    i = 0
+    for key, dataframe in dict_df.items():
+        dataframe['block_prob_%'].plot(style=['v--'], markersize=3, markerfacecolor='None', color=color[i])
+        i = i+1
+
+    plt.title(
+    f'[5G NR]\nSA Paging Block Probability (%)\n')
+    plt.ylabel('Block Probability (%)')
+    plt.xlabel('UE Needed Paging / Paging Message')
+    plt.ylim(0, 10)
+    plt.xlim(0,35)
+    # plt.xticks(rotation=90)
+    plt.grid()
+    
+    plt.legend(max_ue_per_paging_msg, title='Max UE Supported\n/ Paging Message', loc='upper center',
+               bbox_to_anchor=(1.22, 1.02), fancybox=True)
+
+    # plt.savefig('5G_SA_PagBlock_Zoom.png', dpi=300, bbox_inches='tight')
+    plt.show()
+
+    return df_paging_ue

@@ -44,10 +44,27 @@ class pagingoccasion:
 
 class pagingue:
 
-    # Number of UE need paging per second
+    # Number of UE need paging per message
     def ue_per_paging_msg(pdem, df_po):
         df_po['ue_per_paging_msg'] = pdem/df_po['po']
         return df_po
+
+
+class paginguelist:
+
+    # Number of UE need paging per message in list
+    def ue_per_paging_msg(ue_per_paging_msg, max_ue_per_paging_msg):
+
+        df_paging_ue = pd.DataFrame(columns=['ue_per_paging_msg', 'max_ue_per_paging_msg'])
+
+        index = 0
+        for i in range(len(ue_per_paging_msg)):
+            for j in range(len(max_ue_per_paging_msg)):
+                df_paging_ue.loc[index, ['ue_per_paging_msg']] = ue_per_paging_msg[i]
+                df_paging_ue.loc[index, ['max_ue_per_paging_msg']] = max_ue_per_paging_msg[j]
+
+                index = index + 1
+        return df_paging_ue
 
 
 class pagingblock:
