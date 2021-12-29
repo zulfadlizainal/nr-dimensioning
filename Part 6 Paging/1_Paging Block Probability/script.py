@@ -55,8 +55,8 @@ def paging_block_demand():
     plt.legend(title='Paging Occasions \n/ Second', loc='upper center',
                bbox_to_anchor=(1.22, 1.02), fancybox=True)
 
-    plt.savefig('5G_SA_PagBlock_byPagoccasion.png',
-                dpi=300, bbox_inches='tight')
+    # plt.savefig('5G_SA_PagBlock_byPagoccasion.png',
+    #             dpi=300, bbox_inches='tight')
     plt.show()
 
     # Clean data for plotting
@@ -78,7 +78,7 @@ def paging_block_demand():
     # plt.xticks(rotation=90)
     plt.grid()
 
-    plt.savefig('5G_SA_PagBlock_byAvgUE.png', dpi=300, bbox_inches='tight')
+    # plt.savefig('5G_SA_PagBlock_byAvgUE.png', dpi=300, bbox_inches='tight')
     plt.show()
 
     return block_prob
