@@ -31,12 +31,9 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 - [X] Cell DL Throughput :heavy_check_mark:
 - [X] User DL Throughput :heavy_check_mark:
 
-### Part 6: Paging ([Link](https://))
+### Part 6: Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging))
 
-- [ ] Paging Volume
-- [ ] Paging Occasions
-- [ ] UE Identity per Paging
-- [ ] Paging Blocking Probability
+- [X] Paging Blocking Probability :heavy_check_mark:
 - [ ] CCE Consumption for Paging
 - [ ] Paging RE Consumption
 
