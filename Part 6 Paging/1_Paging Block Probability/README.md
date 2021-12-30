@@ -15,7 +15,7 @@ To calculate throughput for DL, total PDSCH RE first need to be estimated. Calcu
 
 ### Paging Demand Calculation Flow
 
-XXX
+Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging blocking probability can then be estimated based on maximum UE supported per paging message.
 
 
                  Number of MT Users ───┐                    ┌─── Number of MT Users
@@ -55,76 +55,69 @@ XXX
 
 ### Assumptions
 
-Available PDSCH RE ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH/1_PDSCH%20RE%20Space))
+Asummptions taken for core network initiated paging:
 
-    XXX
+    # MT Users in the Area during busy hour (Assume)
+    mt_rrc_hour = 1800
 
-Spectral efficiency is derived from actual network testing using Qualcomm chipset UE. Similar spectral efficiency is assumed for all bands in this simulation.
-    
-    XXX
+    # Number of cell is TAC area (Assume)
+    tac_size = 200
 
-Spectral efficiency curve derived from network testing is smoothen using polynomial regression (to derive estimated value). It is then compared with Shannon Theorem estimation for accuracy confirmation. Estimated spectral efficiency is choosen to be used this simulation. 
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/SE_NSA_3.5G.png" alt="SE" title="SE" width=70% height=70% />
-</p>
-<br />
-<br />
+Asummptions taken for radio network initiated paging:
 
-Users are randomly distributed in each cell from good RF range to poor RF range. 
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UserLoc.png" alt="User Location" title="User Location" width=70% height=70% />
-</p>
-<br />
-<br />
+    # Number of cell is RAN Notification area (Assume)
+    ran_noti_area = 180
 
-Available PDSCH RE is distributed to every UE based on simplified round robin resource allocation technique. With this scheduler, every UE is assumed to get resource in time domain manner without any prioritization.
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RoundRobin.png" alt="RR" title="RR" width=100% height=100% />
-</p>
-<br />
-<br />
+    # Number of times UE goes to RRC_INACTIVE in 1 RRC Session (Assume)
+    rrc_inactive = 5
 
-Below relation between SS-RSRP and SS-RSRQ & SS-SINR is used for RF relation derivation.
-<br />
-<br />
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RFRelation.png" alt="RF Relation" title="RF Relation" width=70% height=70% />
-</p>
-<br />
-<br />
+Asummptions taken for maximum UE supported in one paging message: 
+
+    (Assume)
+    max_ue_per_paging_msg_val = 16 
+   
+Network settings for paging frame structure based on 3GPP:
+
+    # Paging Occasion
+    N = [1, 1/2, 1/4, 1/8, 1/16, 1/32]      # N = min(T, nB). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
+    Ns = [4, 2, 1]                          # Ns = max(1, nB/T). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
+    max_ue_per_paging_msg = [4, 8, 12, 16, 20, 24, 28, 32]      # Max supported UE in 1 paging message
 
 ### Calculation
 
-DL User Throughput formula is constructed as below:
+Total paging demand is derived as follows:
 
-    dl_user_throughput_mbps = (PDSCH-RE/Frame/User * radio_frame_sec) * (Estimated SE (bps/Hz) * (SCS (kHz)*1000) /((normal_cp_symbols * (Slots/Frame) * 100) / 1000000 ) * (1 + dl_mu_mimo_gain) * (1 - dl_bler)
+    # Number of paging per second
+    paging_demand = paging_demand_core + paging_demand_ran
 
-    where:
+    # Number of core paging per second
+    paging_demand_core = mt_rrc_hour / 3600 * tac_size                              # 3600 seconds per hour
 
-    radio_frame_sec = 100
-    normal_cp_symbols = 14
-    dl_mu_mimo_gain = 0/100 (SE Calculation already considers MU-MIMO gain)
-    dl_bler = 0/100 (SE Calculation already considers BLER)
+    # Number of ran paging per second
+    paging_demand_ran = mt_rrc_hour / 3600 * rrc_inactive * ran_noti_area           # 3600 seconds per hour
 
-VoNR required throughput is deducted from DL User Throughput to ensure guaranteed VoNR call at any session:
+Total paging occasion is derived as follows:
 
-    where: 
-    
-    vonr_tput_mbps = 0.128
+    # Number of paging occasion per second
+    paging_occasion = N * Ns * 100                                                   # 100 radio frame per second
 
-DL User Throughput considers user activity factor based on % of time where scheduling is needed:
+Average UE require paging per paging message:
 
-    where:
+    # Number of UE need paging per paging message
+    ue_per_paging_msg = paging_demand/paging_occasion
 
-    full_buffer_ue = 100/100
-    high_demand_ue = 80/100 
-    low_demand_ue = 20/100
+Paging blocking probability is derived based on Erlang B calculation. (To be studied for better calculation method)
+<br />
+<br />
+<p align="center">
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_ErlangB.png" alt="ErlangB" title="ErlangB" width=50% height=50% />
+</p>
+<br />
+<br />
+
+    where: (Assume)
+    E = ue_per_paging_msg
+    m = max_ue_per_paging_msg_val
 
 ### Results
 
