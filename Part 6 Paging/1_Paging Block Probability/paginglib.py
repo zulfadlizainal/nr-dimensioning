@@ -19,8 +19,8 @@ class pagingvolume:
         return paging_demand_core
 
     # Number of ran paging per second
-    def paging_ran(mt_rrc_hour, rrc_inactive_hour, ran_noti_area):
-        paging_demand_ran = mt_rrc_hour / 3600 * rrc_inactive_hour * ran_noti_area
+    def paging_ran(mt_rrc_hour, rrc_inactive, ran_noti_area):
+        paging_demand_ran = mt_rrc_hour / 3600 * rrc_inactive * ran_noti_area
         return paging_demand_ran
 
 

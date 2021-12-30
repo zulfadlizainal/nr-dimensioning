@@ -16,7 +16,7 @@ def paging_block_demand():
     # Calculate paging demand from ran and core
     pd_core = pagingvolume.paging_core(mt_rrc_hour, tac_size)
     pd_ran = pagingvolume.paging_ran(
-        mt_rrc_hour, rrc_inactive_hour, ran_noti_area)
+        mt_rrc_hour, rrc_inactive, ran_noti_area)
     pdem = pagingvolume.paging_demand(pd_core, pd_ran)
 
     # Calculate paging occasion from parameter settings
@@ -45,7 +45,7 @@ def paging_block_demand():
     sns.catplot(x="N_Ns Settings", y="block_prob_%",
                 hue="po", kind="swarm", s=10, legend=False, data=block_prob_plt)
     plt.title(
-        f'[5G NR]\nSA Paging Block Probability (%) vs Paging Occasion\n\nAssumptions (within TAC/RNA Area):\nMT RRC User in Busy Hour = {mt_rrc_hour}\nCells in TAC Area = {tac_size}\nCells in RAN Notification Area = {ran_noti_area}\nRRC Inactive Time per One RRC Session = {rrc_inactive_hour}\nMaximum UE ID in One Paging Msg = {max_ue_per_paging_msg_val}\n')
+        f'[5G NR]\nSA Paging Block Probability (%) vs Paging Occasion\n\nAssumptions (within TAC/RNA Area):\nMT RRC User in Busy Hour = {mt_rrc_hour}\nCells in TAC Area = {tac_size}\nCells in RAN Notification Area = {ran_noti_area}\nRRC Inactive Time per One RRC Session = {rrc_inactive}\nMaximum UE ID in One Paging Msg = {max_ue_per_paging_msg_val}\n')
     plt.ylabel('Block Probability (%)')
     plt.xlabel('N_Ns Settings')
     plt.ylim(0, 100)
@@ -70,7 +70,7 @@ def paging_block_demand():
     block_prob_plt['block_prob_%'].plot(
         style=['v--'], markersize=3, markerfacecolor='None', color=['steelblue'])
     plt.title(
-        f'[5G NR]\nSA Paging Block Probability (%) vs UE Demand\n\nAssumptions (within TAC/RNA Area):\nMT RRC User in Busy Hour = {mt_rrc_hour}\nCells in TAC Area = {tac_size}\nCells in RAN Notification Area = {ran_noti_area}\nRRC Inactive Time per One RRC Session = {rrc_inactive_hour}\nMaximum UE ID in One Paging Msg = {max_ue_per_paging_msg_val}\n')
+        f'[5G NR]\nSA Paging Block Probability (%) vs UE Demand\n\nAssumptions (within TAC/RNA Area):\nMT RRC User in Busy Hour = {mt_rrc_hour}\nCells in TAC Area = {tac_size}\nCells in RAN Notification Area = {ran_noti_area}\nRRC Inactive Time per One RRC Session = {rrc_inactive}\nMaximum UE ID in One Paging Msg = {max_ue_per_paging_msg_val}\n')
     plt.ylabel('Block Probability (%)')
     plt.xlabel('Avg UE / Paging Msg')
     plt.ylim(0, 100)
