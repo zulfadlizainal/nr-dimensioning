@@ -109,7 +109,7 @@ Average UE require paging per paging message:
 Paging blocking probability is derived based on Erlang B calculation. (To be studied for better calculation method)
 <br />
 <br />
-<p align="center">
+<p align="left">
     <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_ErlangB.png" alt="ErlangB" title="ErlangB" width=50% height=50% />
 </p>
 <br />
@@ -121,11 +121,21 @@ Paging blocking probability is derived based on Erlang B calculation. (To be stu
 
 ### Results
 
-Eg: 5G NR DL user throughput for FR1 30kHz SCS 100MHz Bandwidth
+Eg: 5G NR SA paging block probability based on network settings and users demand for paging
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_UserLocResult.png" alt="User Tput / Loc" title="User Tput / Loc" width=100% height=100% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_PagBlock_DemandBased.png" alt="Pagblock_demand" title="Pagblock_demand" width=100% height=100% />
+</p>
+<br />
+<br />
+
+Eg: 5G NR SA paging block probability matrix based on average UE needed paging per paging message and maximum supported UE per paging message
+
+<br />
+<br />
+<p align="center">
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_PagBlock_All.png" alt="Pagblock_all" title="Pagblock_all" width=100% height=100% />
 </p>
 <br />
 <br />
@@ -133,7 +143,7 @@ Eg: 5G NR DL user throughput for FR1 30kHz SCS 100MHz Bandwidth
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%205%20PDSCH/img/DL_User_Throughput_RP_SNR_Result.png" alt="User Tput RF" title="User Tput RF" width=100% height=100% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_PagBlock_Zoom.png" alt="Pagblock_zoom" title="Pagblock_zoom" width=100% height=100% />
 </p>
 <br />
 <br />
