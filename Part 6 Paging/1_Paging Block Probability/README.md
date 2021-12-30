@@ -1,10 +1,10 @@
 # Paging Blocking Probability
 
-The objective of this calculation is to estimate the paging blocking probability of required paging by UE based on paging strategy and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered sucsh as TAC size and RNA size.
+The objective of this calculation is to estimate the paging blocking probability of required paging by UE based on paging demand and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered such as TAC size and RNA (RAN Notification Area) size.
 
 ### Paging Frame Structure
 
-To calculate throughput for DL, total PDSCH RE first need to be estimated. Calculation for PDSCH RE is based on this link.
+Paging frame structure for 5G NR have similar concept as 4G LTE with additional concept of multi beam operation.
 <br />
 <br />
 <p align="center">
@@ -55,10 +55,12 @@ Paging demand is derived from both paging needed in Core and RAN. Based on this 
 
 ### Assumptions
 
-Asummptions taken for core network initiated paging:
+Asummptions taken for number of MT users in the area:
 
     # MT Users in the Area during busy hour (Assume)
     mt_rrc_hour = 1800
+
+Asummptions taken for core network initiated paging:
 
     # Number of cell is TAC area (Assume)
     tac_size = 200
@@ -81,6 +83,8 @@ Network settings for paging frame structure based on 3GPP:
     # Paging Occasion
     N = [1, 1/2, 1/4, 1/8, 1/16, 1/32]      # N = min(T, nB). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
     Ns = [4, 2, 1]                          # Ns = max(1, nB/T). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
+    
+    
     max_ue_per_paging_msg = [4, 8, 12, 16, 20, 24, 28, 32]      # Max supported UE in 1 paging message
 
 ### Calculation
