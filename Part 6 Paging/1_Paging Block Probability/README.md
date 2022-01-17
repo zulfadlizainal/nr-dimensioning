@@ -13,7 +13,7 @@ Paging frame structure for 5G NR have similar concept as 4G LTE with additional 
 <br />
 <br />
 
-### Paging Demand Calculation Flow
+### Paging Demand & Blockage Calculation Flow
 
 Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging blocking probability can then be estimated based on maximum UE supported per paging message.
 

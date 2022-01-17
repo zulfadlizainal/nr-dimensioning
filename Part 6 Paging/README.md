@@ -6,12 +6,12 @@ Simulations on the topics of Paging in 5G NR.
 Dimensioning of users required paging and its probability of blockage.
 <br />
 
-#### 2. CCE Consumption for Paging ([Link]())
+#### 2. PDCCH CCE Consumption for Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging/2_Paging%20PDCCH%20CCE%20Consumption))
 
-To be updated.
+Consumption of PDCCH CCE based on required pagim message count.
 <br />
 
-#### 3. Paging RE Consumption ([Link]())
+#### 3. PDSCH RE Consumption for Paging ([Link]())
 
 To be updated.
 <br />
