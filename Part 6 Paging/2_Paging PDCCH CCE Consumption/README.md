@@ -1,6 +1,6 @@
 # PDCCH CCE Consumption for Paging
 
-The objective of this calculation is to estimate the paging blocking probability of required paging by UE based on paging demand and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered such as TAC size and RNA (RAN Notification Area) size.
+The objective of this calculation is to estimate the paging CCE consumption by UE based on paging demand and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered such as TAC size, RNA (RAN Notification Area) size, implemented SSB beams, and CCE aggregation level.
 
 ### Paging Frame Structure
 
@@ -61,17 +61,17 @@ Paging demand is derived from both paging needed in Core and RAN. Based on this 
 
 ### Assumptions
 
-Asummptions taken for number of MT users in the area:
+Assumptions taken for number of MT users in the area:
 
     # MT Users in the Area during busy hour (Assume)
     mt_rrc_hour = 1800
 
-Asummptions taken for core network initiated paging:
+Assumptions taken for core network initiated paging:
 
     # Number of cell is TAC area (Assume)
     tac_size = 200
 
-Asummptions taken for radio network initiated paging:
+Assumptions taken for radio network initiated paging:
 
     # Number of cell is RAN Notification area (Assume)
     ran_noti_area = 180
@@ -79,27 +79,30 @@ Asummptions taken for radio network initiated paging:
     # Number of times UE goes to RRC_INACTIVE in 1 RRC Session (Assume)
     rrc_inactive = 5
 
-Asummptions taken for maximum UE supported in one paging message (Assume): 
+Assumptions taken for maximum UE supported in one paging message: 
 
-    max_ue_per_paging_msg_val = 16 
+    max_ue_per_paging_msg_val = 16  (Assume)
    
-Network settings for paging frame structure based on 3GPP (Specs):
+Network settings for paging frame structure based on 3GPP:
 
-    # Paging Occasion
+    # Paging Occasion (Specs)
     N = [1, 1/2, 1/4, 1/8, 1/16, 1/32]      # N = min(T, nB). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
     Ns = [4, 2, 1]                          # Ns = max(1, nB/T). nB can be [4T, 2T,T, 1/2T, 1/4T, 1/8T, 1/16T, 1/32T]
     
+    # Maximum UE per paging message (Specs)
     max_ue_per_paging_msg = [4, 8, 12, 16, 20, 24, 28, 32]      # Max supported UE in 1 paging message
 
-SSB beams settings is considered as below (Specs): 
+SSB beams settings is considered as below: 
 
+    # SSB Beams Implementation (Specs)
     ssb_beams = [1, 2, 4, 8, 16, 32, 64]
 
     # For FR1, SSB Count in SSB Burst Set can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
     # For FR2, SSB Count in SSB Burst Set can be up until 64 (LMax = 64)
 
-Asummptions taken for PDCCH DCI P-RNTI CCE aggregation level (Assume): 
+Assumptions taken for PDCCH DCI P-RNTI CCE aggregation level: 
     
+    # Paging CCE aggregation level (Assume)
     paging_cce_agg_lev = 8 
 
 ### Calculation
@@ -118,7 +121,7 @@ Total paging demand is derived as follows:
 Total paging occasion is derived as follows:
 
     # Number of paging occasion per radio frame
-    paging_occasion = N * Ns                                                             # 100 radio frame per second
+    paging_occasion = N * Ns                                                              # 100 radio frame per second
 
 Average UE require paging per paging message:
 

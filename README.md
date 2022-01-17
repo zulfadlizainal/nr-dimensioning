@@ -34,7 +34,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 ### Part 6: Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging))
 
 - [X] Paging Blocking Probability :heavy_check_mark:
-- [X] PDCCH CCE Consumption for Paging
+- [X] PDCCH CCE Consumption for Paging :heavy_check_mark:
 - [ ] PDSCH RE Consumption for Paging
 
 ### Part 7: UL Common Channel ([Link](https://))
