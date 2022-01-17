@@ -124,7 +124,7 @@ Paging blocking probability is derived based on Erlang B calculation. (To be stu
 
 ### Results
 
-Eg: 5G NR SA paging block probability based on network settings and users demand for paging
+Eg: 5G NR SA paging block probability based on network settings and users demand for paging.
 <br />
 <br />
 <p align="center">
@@ -133,7 +133,7 @@ Eg: 5G NR SA paging block probability based on network settings and users demand
 <br />
 <br />
 
-Eg: 5G NR SA paging block probability matrix based on average UE needed paging per paging message and maximum supported UE per paging message
+Eg: 5G NR SA paging block probability matrix based on average UE needed paging per paging message and maximum supported UE per paging message.
 
 <br />
 <br />

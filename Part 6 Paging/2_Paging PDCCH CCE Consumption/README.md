@@ -105,8 +105,7 @@ Assumptions taken for PDCCH DCI P-RNTI CCE aggregation level:
     # Paging CCE aggregation level (Assume)
     paging_cce_agg_lev = 8
 
-References for PDCCH DCI P-RNTI assumptions taken from configurations based on DCI format 1_0 (3GPP TS 38.212 - Table 7.3.1-1: DCI formats)
-
+References for PDCCH DCI P-RNTI assumptions taken from configurations based on DCI format 1_0 (3GPP TS 38.212 - Table 7.3.1-1: DCI formats).
 <br />
 <br />
 <p align="center">
