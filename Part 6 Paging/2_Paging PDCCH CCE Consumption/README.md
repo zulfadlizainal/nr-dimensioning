@@ -135,7 +135,7 @@ Paging Volume is derived as follows:
 
     # If paging ue per paging message < 1 ue, paging occasion might not be used
 
-Paging CCE is derived as follows
+Paging CCE is derived as follows:
 
     # Number of paging cce / radio frame
     paging_cce = paging_count * paging_cce_agg_lev
