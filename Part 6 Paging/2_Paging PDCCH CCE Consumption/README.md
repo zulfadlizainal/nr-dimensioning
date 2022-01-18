@@ -53,7 +53,7 @@ Paging demand is derived from both paging needed in Core and RAN. Based on this 
                                                        │
                                                        ▼
                                       Min (1,UE Identity per Paging Msg)                    Number of
-                                                                                            SSB Beams
+                                                       |                                    SSB Beams
                                                        │                                        │
                                                        │                                        │
                                                        │                                        │

@@ -13,9 +13,9 @@ Paging frame structure for 5G NR have similar concept as 4G LTE with additional 
 <br />
 <br />
 
-### Paging Volume and Paging CCE Calculation Flow
+### Paging Volume and Paging PDSCH RE Calculation Flow
 
-Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging volume is linearly incremented based on number of SSB beams transmitted. Paging PDSCH RE is then calculated considering paging message header bits and bits per UE identity in the paging message. Paging bits can later be converted to number of RE depending on spectral efficiency (Modulation and Code Rate table).
+Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging volume is linearly incremented based on number of SSB beams transmitted. Paging PDSCH RE is then calculated considering paging message header bits and bits per UE identity in the paging message. Paging bits can later be converted to number of RE depending on spectral efficiency using MCS to modulation and code rate table.
 
 
     Number of MT Users ───┐                    ┌─── Number of MT Users
@@ -123,7 +123,7 @@ Conversion of Paging volume (paging message count) to bits:
 
 Conversion of bits to RE count: 
     
-    # Based on MCS-Modulation-CodeRate used by Paging message (Assume) 
+    # Based on MCS, modulation, and code rate used by paging message (Assume) 
     code_rate_constant = 1024
     code_rate_value = 120
     modulation_bitspersym = 2
