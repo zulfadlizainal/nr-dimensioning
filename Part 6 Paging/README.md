@@ -11,7 +11,7 @@ Dimensioning of users required paging and its probability of blockage.
 Consumption of PDCCH CCE based on required paging message count.
 <br />
 
-#### 3. PDSCH RE Consumption for Paging ([Link]())
+#### 3. PDSCH RE Consumption for Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging/3_Paging%20PDSCH%20RE%20Consumption))
 
-To be updated.
+Consumption of PDSCH RE based on required paging message count.
 <br />

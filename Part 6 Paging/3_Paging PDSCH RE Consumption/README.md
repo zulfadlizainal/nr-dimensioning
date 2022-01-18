@@ -1,6 +1,6 @@
-# PDCCH CCE Consumption for Paging
+# PDSCH RE Consumption for Paging
 
-The objective of this calculation is to estimate the paging CCE consumption by UE based on paging demand and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered such as TAC size, RNA (RAN Notification Area) size, implemented SSB beams, and CCE aggregation level.
+The objective of this calculation is to estimate the paging PDSCH RE consumption by UE based on paging demand and maximum supported UE per paging message. Few important components of paging design in 5G NR SA system will be considered such as TAC size, RNA (RAN Notification Area) size, implemented SSB beams, and paging bits size.
 
 ### Paging Frame Structure
 
@@ -15,13 +15,13 @@ Paging frame structure for 5G NR have similar concept as 4G LTE with additional 
 
 ### Paging Volume and Paging CCE Calculation Flow
 
-Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging volume is linearly incremented based on number of SSB beams transmitted. Paging CCE is then derived based on PDCCH DCI aggregation level for P-RNTI. 
+Paging demand is derived from both paging needed in Core and RAN. Based on this demand and paging frame structure settings, average UE per paging message required can be derived. Paging volume is linearly incremented based on number of SSB beams transmitted. Paging PDSCH RE is then calculated considering paging message header bits and bits per UE identity in the paging message. Paging bits can later be converted to number of RE depending on spectral efficiency (Modulation and Code Rate table).
 
 
     Number of MT Users ───┐                    ┌─── Number of MT Users
                           │                    │
     Cell Count in TAC  ───┤                    ├─── Cell Count in RNA
-                          │                    │                     
+                          │                    │
                           │                    ├─── Number of RRC_INACTIVE / RRC Session
                           │                    │
                           │                    │
@@ -47,25 +47,29 @@ Paging demand is derived from both paging needed in Core and RAN. Based on this 
                                     └─────────► per Paging Msg ◄─────────────┘
                                                     Needed
                                                        │
-                                                       │
-                                                       │
-                                                       │
-                                                       │
-                                                       ▼
-                                      Min (1,UE Identity per Paging Msg)                    Number of
-                                                                                            SSB Beams
-                                                       │                                        │
-                                                       │                                        │
-                                                       │                                        │
-                                                       │                                        │               PDCCH DCI
-                                                       └────────────────► Paging ◄──────────────┘           Aggregation Level
-                                                                          Volume                                for P-RNTI
-                                                                             │                                      │
-                                                                             │                                      │
-                                                                             │                                      │
-                                                                             │                                      │
-                                                                             │                Paging                │
-                                                                             └────────────► CCE Needed ◄────────────┘
+                           ┌───────────────────────────┤
+                           │                           │
+                           │                           │
+                           │                           │
+                           │                           ▼
+                           │          Min (1,UE Identity per Paging Msg)                    Number of
+                           │                           |                                    SSB Beams
+                           │                           │                                        │
+                           │                           │                                        │
+                           │                           │                                        │
+                           │                           │                                        │
+                           │                           └────────────────► Paging ◄──────────────┘
+                           │                                              Volume
+                           │                                                │
+                           │                                                │
+                           │                   Paging Header Bits ─────────►│
+                           │                                                │
+                           └─────────────────► UE Identity Bits   ─────────►│
+                                                                            │
+                                                                            ▼
+                                                                           Total               Bits
+                                                                           Paging ───────────► to
+                                                                           Bits                RE
 
 
 ### Assumptions
@@ -109,16 +113,27 @@ SSB beams settings is considered as below:
     # For FR1, SSB Count in SSB Burst Set can be up until 4 and 8 (LMax = 4 for < 3GHz, LMax = 8 for ~3-6GHz)
     # For FR2, SSB Count in SSB Burst Set can be up until 64 (LMax = 64)
 
-Assumptions taken for PDCCH DCI P-RNTI CCE aggregation level: 
+Conversion of Paging volume (paging message count) to bits: 
     
-    # Paging CCE aggregation level (Assume)
-    paging_cce_agg_lev = 8
+    # UE identity bits in paging message (Assume)
+    ue_identity_bits = 40
 
-References for PDCCH DCI P-RNTI assumptions taken from configurations based on DCI format 1_0 (3GPP TS 38.212 - Table 7.3.1-1: DCI formats).
+    # Paging header bits (Assume)
+    paging_header_bits = 96
+
+Conversion of bits to RE count: 
+    
+    # Based on MCS-Modulation-CodeRate used by Paging message (Assume) 
+    code_rate_constant = 1024
+    code_rate_value = 120
+    modulation_bitspersym = 2
+
+
+References for bits conversion to PDSCH RE assumptions taken from configurations based on MCS Index Table for PDSCH (3GPP TS 38.214 - Table 5.1.3.1-1).
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_DCIFormat_Paging.png" alt="DCI Format" title="DCI Format" width=50% height=50% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_MCS-Mod-Code.png" alt="MCS-SE_Table" title="MCS-SE_Table" width=50% height=50% />
 </p>
 <br />
 <br /> 
@@ -153,10 +168,13 @@ Paging Volume is derived as follows:
 
     # If paging ue per paging message < 1 ue, paging occasion might not be used
 
-Paging CCE is derived as follows:
+Paging PDSCH RE is derived as follows:
 
-    # Number of paging cce / radio frame
-    paging_cce = paging_count * paging_cce_agg_lev
+    # Number of paging bits / radio frame
+    paging_bits = paging_count * ((ue_identity_bits * ue_per_paging_msg) + paging_header_bits)
+
+    # Number of paging PDSCH RE / radio frame (Convert bits to RE based on SE)
+    paging_re = paging_bits * (code_rate_value / code_rate_constant / modulation_bitspersym)
 
 ### Results
 
@@ -169,12 +187,12 @@ Eg: 5G NR SA paging volume (message count) per radio frame based on implemented 
 <br />
 <br />
 
-Eg: 5G NR SA paging CCE per radio frame based on implemented SSB beams.
+Eg: 5G NR SA paging PDSCH RE per radio frame based on implemented SSB beams.
 
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_PagingCCEperFrame.png" alt="Paging_CCE" title="Paging_CCE" width=70% height=70% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_PagingREperFrame.png" alt="Paging_RE" title="Paging_RE" width=70% height=70% />
 </p>
 <br />
 <br />

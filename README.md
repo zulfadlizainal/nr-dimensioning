@@ -35,7 +35,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 
 - [X] Paging Blocking Probability :heavy_check_mark:
 - [X] PDCCH CCE Consumption for Paging :heavy_check_mark:
-- [ ] PDSCH RE Consumption for Paging
+- [X] PDSCH RE Consumption for Paging :heavy_check_mark:
 
 ### Part 7: UL Common Channel ([Link](https://))
 
