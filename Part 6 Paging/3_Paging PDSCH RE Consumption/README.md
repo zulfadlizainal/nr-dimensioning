@@ -133,7 +133,7 @@ References for bits conversion to PDSCH RE assumptions taken from configurations
 <br />
 <br />
 <p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_MCS-Mod-Code.png" alt="MCS-SE_Table" title="MCS-SE_Table" width=50% height=50% />
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/Part%206%20Paging/img/5G_SA_MCS-Mod-Code.png" alt="MCS-SE_Table" title="MCS-SE_Table" width=70% height=70% />
 </p>
 <br />
 <br /> 
