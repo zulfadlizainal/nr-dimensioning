@@ -1,10 +1,10 @@
-## 🌱 5G NR Planning Simulations 
+## 🌱 5G NR Planning Simulations 🌱
 
 A list of simulations and figures that demonstrate important concepts in 5G NR radio resource planning and dimensioning. This project was built for the purpose of learning and understanding 5G NR radio channel properties using simulations. 
 
 ## Webpages
 
-Main webpage for this project is here [Link](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/)<br>
+This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
 
 ## Topics
 
