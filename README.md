@@ -13,8 +13,6 @@ A list of simulations and figures that demonstrate important concepts in 5G NR r
 📘 Part 7: UL Common Channel<br>
 📘 Part 8: PUSCH<br>
 
-## Webpages
-
 This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
 
 <p align="center">
@@ -23,7 +21,7 @@ This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planni
 
 ## License
 
-This project is licensed under open source MIT license. View license [here](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/LICENSE).
+This project is licensed under MIT open source license. View license [here](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/LICENSE).
 
 ## Support
 
