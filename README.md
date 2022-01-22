@@ -1,6 +1,12 @@
-## 🌱 5G NR Planning Simulations 🌱
+## 🌱 5G NR Planning And Dimesioning 🌱
 
 A list of simulations and figures that demonstrate important concepts in 5G NR radio resource planning and dimensioning. This project was built for the purpose of learning and understanding 5G NR radio channel properties using simulations. 
+
+This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
+
+<p align="center">
+    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/docs/webpages.gif" width="70%" height="70%" />
+</p>
 
 ## Topics
 
@@ -12,12 +18,6 @@ A list of simulations and figures that demonstrate important concepts in 5G NR r
 📘 Part 6: Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging))<br>
 📘 Part 7: UL Common Channel<br>
 📘 Part 8: PUSCH<br>
-
-This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
-
-<p align="center">
-    <img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/docs/webpages.gif" width="70%" height="70%" />
-</p>
 
 ## License
 
