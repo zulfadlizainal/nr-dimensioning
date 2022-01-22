@@ -1,6 +1,10 @@
 ## 5G Planning Simulations
 
-A series of 5G NR radio resource planning and dimensioning methods containing list of simulations and figures.
+This project contains a list of simulations and figures that demonstrate important concepts in 5G NR radio resource planning and dimensioning.
+
+This project was initially built for the purpose of learning and understanding 5G NR radio channel concept and properties. This project have been made open source and being hosted on Github as an open source repository under MIT license. I would like to welcome readers to get involve and contribute to this project to improve it even further.
+
+#### Topics
 
 Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
 
@@ -55,3 +59,5 @@ PUSCH RE Space<br>
 Cell UL Throughput<br>
 User UL Throughput<br>
 UL Overhead<br>
+
+#### License
