@@ -1,43 +1,43 @@
-# 5G-NR-Planning-and-Dimensioning
+## 5G Planning Simulations
 
-A series of 5G NR planning/capacity dimensioning simulations and figures.
+A series of 5G NR radio resource planning and dimensioning methods containing list of simulations and figures.
 
-### Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
+#### Part 1: Operating Band, Frame Structure ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure))
 
-- [X] RB Count :heavy_check_mark:
-- [X] Minimum Guard Band :heavy_check_mark:
-- [X] RE Count :heavy_check_mark:
+RB Count 
+Minimum Guard Band 
+RE Count 
 
-### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
+#### Part 2: Synchronization ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%202%20Syncronization))
 
-- [X] PSS, SSS Occupancy :heavy_check_mark:
-- [X] PBCH Occupancy :heavy_check_mark:
-- [X] SSB Occupancy :heavy_check_mark:
+PSS, SSS Occupancy 
+PBCH Occupancy 
+SSB Occupancy 
 
-### Part 3: System Information ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information))
+#### Part 3: System Information ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%203%20System%20Information))
 
-- [X] SI Occupancy :heavy_check_mark:
+SI Occupancy 
 
-### Part 4: DL Common Channel ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel))
+#### Part 4: DL Common Channel ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%204%20DL%20Common%20Channel))
 
-- [X] Demand for Data Scheduling :heavy_check_mark:
-- [X] Demand for VoNR Scheduling :heavy_check_mark:
-- [X] PDCCH CCE and PDCCH RE Demand :heavy_check_mark:
-- [X] PDCCH Utilization :heavy_check_mark:
+Demand for Data Scheduling 
+Demand for VoNR Scheduling 
+PDCCH CCE and PDCCH RE Demand 
+PDCCH Utilization 
 
-### Part 5: PDSCH ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH))
+#### Part 5: PDSCH ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%205%20PDSCH))
 
-- [X] PDSCH RE Space vs DL Overhead :heavy_check_mark:
-- [X] Cell DL Throughput :heavy_check_mark:
-- [X] User DL Throughput :heavy_check_mark:
+PDSCH RE Space vs DL Overhead 
+Cell DL Throughput 
+User DL Throughput 
 
-### Part 6: Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging))
+#### Part 6: Paging ([Link](https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%206%20Paging))
 
-- [X] Paging Blocking Probability :heavy_check_mark:
-- [X] PDCCH CCE Consumption for Paging :heavy_check_mark:
-- [X] PDSCH RE Consumption for Paging :heavy_check_mark:
+Paging Blocking Probability 
+PDCCH CCE Consumption for Paging 
+PDSCH RE Consumption for Paging 
 
-### Part 7: UL Common Channel ([Link](https://))
+#### Part 7: UL Common Channel ([Link](https://))
 
 - [ ] PRACH Demand for Call Setup
 - [ ] PRACH Demand for Handover
@@ -48,7 +48,7 @@ A series of 5G NR planning/capacity dimensioning simulations and figures.
 - [ ] CSI Demand
 - [ ] PUCCH Format Demand
 
-### Part 8: PUSCH ([Link](https://))
+#### Part 8: PUSCH ([Link](https://))
 
 - [ ] Total UL RE Space
 - [ ] PUSCH RE Space
