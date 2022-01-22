@@ -6,7 +6,7 @@ A list of simulations and figures that demonstrate important concepts in 5G NR r
 
 This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
 
-<img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/docs/webpages.gif" width="40" height="40" />
+<img src="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/blob/master/docs/webpages.gif" width="70%" height="70%" />
 
 ## Topics
 
