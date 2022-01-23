@@ -9,7 +9,6 @@ This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planni
 </p>
 
 ## Topics
-<br>
 
 #### Part 1: Operating Band, Frame Structure
 <li><a href="https://github.com/zulfadlizainal/5G-NR-Planning-And-Dimensioning/tree/master/Part%201%20Operating%20Band%2C%20Frame%20Structure/1_RB%20Count" target="_blank" rel="noopener noreferrer">RB Count</a></li>
