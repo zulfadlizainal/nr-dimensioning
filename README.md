@@ -1,6 +1,6 @@
 ## 🌱 5G NR Planning And Dimesioning 🌱
 
-A list of simulations and figures that demonstrate important concepts in 5G NR radio resource planning and dimensioning. This project was built for the purpose of learning and understanding 5G NR radio channel properties using simulations. 
+<div style="text-align: justify"> A list of simulations and figures that demonstrate important concepts in 5G NR radio resource planning and dimensioning. This project is built for the purpose of learning and understanding 5G NR radio channel properties using simulations. </div>
 
 This project is also hosted [here](https://zulfadlizainal.github.io/5G-NR-Planning-And-Dimensioning/).<br>
 
