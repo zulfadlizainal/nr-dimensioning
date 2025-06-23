@@ -40,11 +40,11 @@ A list of simulations and figures that demonstrate important concepts in 5G NR r
 <br>
 
 #### Part 7: UL Common Channel 
-<li><a href="">In Progress</a></li>
+<li><a href="">Open for contribution.</a></li>
 <br>
 
 #### Part 8: PUSCH 
-<li><a href="">In Progress</a></li>
+<li><a href="">Open for contribution.</a></li>
 <br>
 
 ## License
